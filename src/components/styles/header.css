@@ -1,0 +1,21 @@
+header {
+    height: 122px;
+    background-color: #EDEFEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+header section {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+}
+
+header img {
+    width: 250px;
+    height: 75px;
+    margin-left: 30px;
+}

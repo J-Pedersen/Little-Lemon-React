@@ -1,0 +1,43 @@
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-right: 30px;
+}
+
+.contact-title {
+    text-align: center;
+    color: #F4CE14;
+    font-family: 'Karla';
+    font-size: 24px;
+    font-weight: 950;
+    margin: 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+    padding: 0;
+    justify-content: center;
+    font-family: 'Karla';
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.contact-info li {
+    align-self: center;
+    margin-bottom: 10px;
+}
+
+.email-info {
+    color: #F4CE14;
+    font-weight: 900;
+}

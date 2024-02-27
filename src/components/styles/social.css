@@ -1,0 +1,37 @@
+.social-section {
+    display: flex;
+    flex-direction: column;
+    width: 190px;
+    align-items: center;
+}
+
+.social-title {
+    text-align: center;
+    color: #F4CE14;
+    font-family: 'Karla';
+    font-size: 24px;
+    font-weight: 950;
+    margin: 0;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    text-decoration: underline;
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.social-icon {
+    flex: 0 0 calc(33.333% - 20px);
+    max-width: calc(33.333% - 20px);
+    text-align: center;
+}
+
+.social-icon:hover {
+    color: #F4CE14;
+}

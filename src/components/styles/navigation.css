@@ -1,0 +1,26 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  menu {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    font-family: Karla;
+    font-size: 18px;
+    font-weight: 950;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  }
+
+  menu li {
+    margin-right: 30px;
+    align-self: center;
+  }
+
+  menu li:hover {
+    color: #F4CE14;
+    -webkit-text-stroke: .5px #000;
+  }

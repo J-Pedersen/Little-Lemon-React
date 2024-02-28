@@ -1,15 +1,14 @@
 import React from 'react';
 import '../components/styles/normalize.css';
+import '../components/styles/cart.css';
 
 function Cart() {
     return (
         <>
-            <section style={{
-                backgroundColor: '#495E57',
-                height: '430px',
-                boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.5)',
-            }}>
-                <h1>Checkout Text</h1>
+            <section className="cart-section">
+                <div className="accent-bar-top" />
+                <h1>Cart Text</h1>
+                <div className="accent-bar-bottom" />
             </section>
         </>
     );

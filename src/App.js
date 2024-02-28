@@ -7,12 +7,12 @@ import Menu from './pages/Menu';
 import Booking from './pages/Booking';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
+import Confirmation from './pages/Confirmation';
 import './components/styles/normalize.css';
 
 function App() {
   const location = useLocation();
 
-  // Function to determine which component to render based on the route
   const renderComponent = () => {
     switch (location.pathname) {
       case '/menu':
@@ -23,6 +23,8 @@ function App() {
         return <Cart />;
       case '/login':
         return <Login />;
+      case '/confirmation':
+          return <Confirmation />;
       default:
         return <Home />;
     }

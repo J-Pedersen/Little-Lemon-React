@@ -5,7 +5,7 @@ nav {
     margin: 0 auto;
   }
 
-  menu {
+menu {
     display: flex;
     list-style: none;
     text-align: center;
@@ -13,14 +13,19 @@ nav {
     font-size: 18px;
     font-weight: 950;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
-  }
+}
 
-  menu li {
+.nav-link {
+    color: #000;
     margin-right: 30px;
     align-self: center;
-  }
+    text-decoration: none;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
 
-  menu li:hover {
+.nav-link:active,
+.nav-link:hover,
+.nav-link:focus  {
     color: #F4CE14;
     -webkit-text-stroke: .5px #000;
-  }
+}

@@ -4,7 +4,7 @@ import Menu from '../pages/Menu';
 import Booking from '../pages/Booking';
 import Cart from '../pages/Cart';
 import Login from '../pages/Login';
-import Confirmation from '../pages/Confirmation'
+import Confirmation from './pages/Confirmation';
 import { Routes, Route } from "react-router-dom";
 
 function Routing() {

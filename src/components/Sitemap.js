@@ -17,7 +17,7 @@ function Sitemap() {
                 <nav className="sitemap-nav">
                     <menu className="sitemap-menu">
                         <li>
-                            <Link to="/" className="sitemap-link" onClick={scrollToTop}>HOME</Link>
+                            <Link to="/" className='nav-link' onClick={scrollToTop}>HOME</Link>
                         </li>
                         <li>
                             <HashLink
@@ -25,22 +25,22 @@ function Sitemap() {
                                 smooth={true}
                                 duration={500}
                                 offset={-50}
-                                className="sitemap-link"
+                                className='nav-link'
                             >
                                 ABOUT
                             </HashLink>
                         </li>
                         <li>
-                            <Link to="/menu" className="sitemap-link" onClick={scrollToTop}>MENU</Link>
+                            <Link to="/menu"  className='nav-link' onClick={scrollToTop}>MENU</Link>
                         </li>
                         <li>
-                            <Link to="/booking" className="sitemap-link" onClick={scrollToTop}>RESERVATIONS</Link>
+                            <Link to="/booking"  className='nav-link' onClick={scrollToTop}>RESERVATIONS</Link>
                         </li>
                         <li>
-                            <Link to="/cart" className="sitemap-link" onClick={scrollToTop}>ORDER ONLINE</Link>
+                            <Link to="/cart"  className='nav-link' onClick={scrollToTop}>ORDER ONLINE</Link>
                         </li>
                         <li>
-                            <Link to="/login" className="sitemap-link" onClick={scrollToTop}>LOGIN</Link>
+                            <Link to="/login"  className='nav-link' onClick={scrollToTop}>LOGIN</Link>
                         </li>
                     </menu>
                 </nav>

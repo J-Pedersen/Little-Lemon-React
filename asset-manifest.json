@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/little-lemon-react/static/css/main.dd2b8ef4.css",
+    "main.js": "/little-lemon-react/static/js/main.6a67b14e.js",
+    "static/js/453.59707f9c.chunk.js": "/little-lemon-react/static/js/453.59707f9c.chunk.js",
+    "static/media/hero.jpg": "/little-lemon-react/static/media/hero.4a635f3bd7686ce4f8db.jpg",
+    "static/media/brothers2.png": "/little-lemon-react/static/media/brothers2.a64f1442a3f1c549f277.png",
+    "static/media/brothers1.png": "/little-lemon-react/static/media/brothers1.ab6b8d2ec124b5e5bf54.png",
+    "static/media/logoHorizontalGreen.png": "/little-lemon-react/static/media/logoHorizontalGreen.31f6b8604e02a6c825c7.png",
+    "static/media/logoVerticalWhite.png": "/little-lemon-react/static/media/logoVerticalWhite.81459e48722eb4deacb5.png",
+    "index.html": "/little-lemon-react/index.html",
+    "main.dd2b8ef4.css.map": "/little-lemon-react/static/css/main.dd2b8ef4.css.map",
+    "main.6a67b14e.js.map": "/little-lemon-react/static/js/main.6a67b14e.js.map",
+    "453.59707f9c.chunk.js.map": "/little-lemon-react/static/js/453.59707f9c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd2b8ef4.css",
+    "static/js/main.6a67b14e.js"
+  ]
+}

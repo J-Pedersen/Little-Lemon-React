@@ -9,20 +9,11 @@ import Children from '../assets/children.png';
 import Calendar from '../assets/calendar.png';
 import Clock from '../assets/clock.png';
 import Group from '../assets/group.png';
-// import Occasion from '../assets/occasion.png';
-// import Birthday from '../assets/birthday.png';
-// import Engagement from '../assets/engagement.png';
-// import Wedding from '../assets/wedding.png';
-// import Anniversary from '../assets/anniversary.png';
-// import BabyShower from '../assets/baby-shower.png';
-// import Graduation from '../assets/graduation.png';
-// import Bachelor from '../assets/bachelor.png';
-// import Bachelorette from '../assets/bachelorette.png';
-// import Mitzvah from '../assets/mitzvah.png';
+
 
 
 function Booking() {
-    // State variables for form data
+
     const [formData, setFormData] = useState({
         date: '',
         time: '',
@@ -36,7 +27,6 @@ function Booking() {
         foodAllergy: false,
     });
 
-    // Event handler for form input changes
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData(prevData => ({
@@ -45,10 +35,8 @@ function Booking() {
         }));
     };
 
-    // Event handler for form submission
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Handle form submission, e.g., send data to server
         console.log(formData);
     };
 

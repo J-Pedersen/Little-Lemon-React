@@ -1,20 +1,27 @@
 {
   "files": {
-    "main.css": "/little-lemon-react/static/css/main.dd2b8ef4.css",
-    "main.js": "/little-lemon-react/static/js/main.6a67b14e.js",
+    "main.css": "/little-lemon-react/static/css/main.71b6f029.css",
+    "main.js": "/little-lemon-react/static/js/main.4eb01dfb.js",
     "static/js/453.59707f9c.chunk.js": "/little-lemon-react/static/js/453.59707f9c.chunk.js",
+    "static/media/Chris.png": "/little-lemon-react/static/media/Chris.11f95d70b111e58e9e23.png",
+    "static/media/Jane.png": "/little-lemon-react/static/media/Jane.415cc0d7c3c90e39b4b6.png",
+    "static/media/Andy.png": "/little-lemon-react/static/media/Andy.f8783517e2b2e016bc45.png",
     "static/media/hero.jpg": "/little-lemon-react/static/media/hero.4a635f3bd7686ce4f8db.jpg",
     "static/media/brothers2.png": "/little-lemon-react/static/media/brothers2.a64f1442a3f1c549f277.png",
     "static/media/brothers1.png": "/little-lemon-react/static/media/brothers1.ab6b8d2ec124b5e5bf54.png",
+    "static/media/pizza.png": "/little-lemon-react/static/media/pizza.0ba5d37edb669dc71a34.png",
+    "static/media/greek-salad.png": "/little-lemon-react/static/media/greek-salad.d9251e509aabd0f81d97.png",
+    "static/media/dolmades.png": "/little-lemon-react/static/media/dolmades.89f8f23d22504876663b.png",
+    "static/media/Andrea.png": "/little-lemon-react/static/media/Andrea.5ae6d75c9d92a481bb95.png",
     "static/media/logoHorizontalGreen.png": "/little-lemon-react/static/media/logoHorizontalGreen.31f6b8604e02a6c825c7.png",
     "static/media/logoVerticalWhite.png": "/little-lemon-react/static/media/logoVerticalWhite.81459e48722eb4deacb5.png",
     "index.html": "/little-lemon-react/index.html",
-    "main.dd2b8ef4.css.map": "/little-lemon-react/static/css/main.dd2b8ef4.css.map",
-    "main.6a67b14e.js.map": "/little-lemon-react/static/js/main.6a67b14e.js.map",
+    "main.71b6f029.css.map": "/little-lemon-react/static/css/main.71b6f029.css.map",
+    "main.4eb01dfb.js.map": "/little-lemon-react/static/js/main.4eb01dfb.js.map",
     "453.59707f9c.chunk.js.map": "/little-lemon-react/static/js/453.59707f9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dd2b8ef4.css",
-    "static/js/main.6a67b14e.js"
+    "static/css/main.71b6f029.css",
+    "static/js/main.4eb01dfb.js"
   ]
 }

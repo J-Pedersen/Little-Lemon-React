@@ -1,16 +1,92 @@
 import React from 'react';
 import './styles/normalize.css';
+import './styles/specials.css';
+import dishIcon from "../assets/dish-icon.png"
+import greekSalad from "../assets/dishes/greek-salad.png"
+import dolmades from "../assets/dishes/dolmades.png"
+import pizza from "../assets/dishes/pizza.png"
+import delivery from "../assets/delivery.png"
+import deliveryHover from "../assets/delivery-hover.png"
 
 function Specials() {
+    const [deliveryImage1, setDeliveryImage1] = React.useState(delivery);
+    const [deliveryImage2, setDeliveryImage2] = React.useState(delivery);
+    const [deliveryImage3, setDeliveryImage3] = React.useState(delivery);
+
     return (
         <>
-            <section style={{
-                  backgroundColor: '#EDEFEE',
-                  height: '715px',
-                  boxShadow: '3px 3px 5px rgba(0, 0, 0, 0.5)',
-                  margin: '-20px 0',
-              }}>
-                  <h1>Specials text</h1>
+            <section className="specials-section">
+                <div className= "specials-header">
+                    <div className= "specials-title">
+                        <img src={dishIcon} alt="dish icon"></img>
+                        <h1>Specials</h1>
+                    </div>
+                    <button className= "online-menu-btn">ONLINE MENU</button>
+                </div>
+                {/* Content */}
+                <div className='specials-content'>
+                    <article className='specials-card'>
+                        <img src={greekSalad} alt='Greek salad'></img>
+                        <hr className='card-accent-bar'></hr>
+                        <div className='specials-card-header'>
+                            <h3>Greek Salad</h3>
+                            <p className='price'>$9.99</p>
+                        </div>
+                        <p className='special-description'>
+                            Made with pieces of tomatoes, cucumbers,
+                            onion, feta cheese, and olives and dressed
+                            with salt, greek oregano, capers, and olive oil.
+                        </p>
+                        <button
+                            className='add-to-cart-btn'
+                            onMouseEnter={() => setDeliveryImage1(deliveryHover)}
+                            onMouseLeave={() => setDeliveryImage1(delivery)}
+                        >
+                            Order A Delivery
+                            <img src={deliveryImage1} alt='delivery'></img>
+                        </button>
+                    </article>
+                    <article className='specials-card'>
+                        <img src={dolmades} alt='Dolmades'></img>
+                        <hr className='card-accent-bar'></hr>
+                        <div className='specials-card-header'>
+                            <h3>Dolmades</h3>
+                            <p className='price'>$8.99</p>
+                        </div>
+                        <p className='special-description'>
+                            Grape leaves stuffed with rice, lemon, and fresh herbs.
+                        </p>
+                        <button
+                            className='add-to-cart-btn'
+                            onMouseEnter={() => setDeliveryImage2(deliveryHover)}
+                            onMouseLeave={() => setDeliveryImage2(delivery)}
+                        >
+                            Order A Delivery
+                            <img src={deliveryImage2} alt='delivery'></img>
+                        </button>
+                    </article>
+                    <article className='specials-card'>
+                        <img src={pizza} alt='Pizza'></img>
+                        <hr className='card-accent-bar'></hr>
+                        <div className='specials-card-header'>
+                            <h3>Pizza</h3>
+                            <p className='price'>$12.99</p>
+                        </div>
+                            <p className='special-description'>
+                                A 12" stone oven cooked pizza with your choice of
+                                three toppings. Additional toppings available for
+                                additional charge. Serves Two.
+                            </p>
+                            <button
+                                className='add-to-cart-btn'
+                                onMouseEnter={() => setDeliveryImage3(deliveryHover)}
+                                onMouseLeave={() => setDeliveryImage3(delivery)}
+                            >
+                                Order A Delivery
+                                <img src={deliveryImage3} alt='delivery'></img>
+                            </button>
+                    </article>
+                </div>
             </section>
         </>
     );

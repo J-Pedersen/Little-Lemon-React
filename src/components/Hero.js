@@ -11,7 +11,7 @@ function Hero() {
             <div className="accent-bar-top" />
 
             {/* Content */}
-            <div className="content">
+            <div className="hero-content">
                 <div className="title">
                     <h1>Little Lemon</h1>
                     <h2>Chicago</h2>

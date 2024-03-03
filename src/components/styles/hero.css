@@ -1,7 +1,7 @@
 .hero-section {
     height: 420px;
-    width: 100%;
     background-color: #495E57;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -22,7 +22,7 @@
     z-index: 1;
 }
 
-.content {
+.hero-content {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,7 +62,7 @@
     font-weight: 700;
     line-height: 1.5;
     width: 400px;
-    margin: 50px 30px;
+    margin: 40px 30px;
 }
 
 .reservation-btn {

@@ -1,6 +1,6 @@
 .booking-section {
     background-color: #495E57;
-    height: 430px;
+    height: 550px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
     align-content: center;
@@ -9,5 +9,147 @@
 
 .booking-section h1{
     color: #F4CE14;
-    padding-top: 160px;
+    padding-top: 30px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: Markazi Text;
+    font-size: 40px;
+    font-weight: 800;
 }
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    height: 550px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.field-wrapper {
+    display: flex;
+    width: 90%;
+    gap: 20px;
+    height: 360px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.field-wrapper input{
+    border-radius: 8px;
+}
+
+.field-wrapper select {
+    border-radius: 8px;
+}
+
+.box input {
+    accent-color: #F4CE14;
+}
+
+.required {
+    color: red;
+}
+
+.column-reserve-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    height: 260px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.column-contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 340px;
+    height: 260px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.column-special-considerations {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 320px;
+    height: 260px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.sc-boxes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.field-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #F4CE14;
+}
+
+.field-col label {
+    align-self: flex-start;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.field-row {
+    display: flex;
+    gap: 10px;
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #F4CE14;
+}
+
+.field-row label {
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.reservation-form button {
+    width: 260px;
+    height: 60px;
+    background-color: #F4CE14;
+    border-radius: 16px;
+    border: 2px solid #000;
+    margin: 40px 0;
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 950;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+legend {
+    color: #F4CE14;
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 950;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    height: 25px;
+    width: 25px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+/* .children-icon {
+
+} */

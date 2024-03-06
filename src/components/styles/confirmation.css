@@ -1,13 +1,86 @@
 .confirmation-section {
     background-color: #495E57;
-    height: 430px;
+    height: 555px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     text-align: center;
     align-content: center;
     position: relative;
+    justify-content: center;
+}
+
+.confirm-data-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    gap: 40px;
+    height: 330px;
 }
 
 .confirmation-section h1{
     color: #F4CE14;
     padding-top: 160px;
+}
+
+.confirmation-data {
+    display: flex;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.res-info,
+.cnt-info,
+.special-info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.conf-btns {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.submit-btn,
+.back-btn {
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 950;
+    border-radius: 16px;
+    background-color: #F4CE14;
+    color: #000;
+    width: 210px;
+    height: 60px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    border: 2px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.submit-btn:hover,
+.back-btn:hover {
+    color: #F4CE14;
+    background-color: rgba(51, 51, 51, 0.5);
+    border: 2px solid #F4CE14;
+}
+
+.back-btn img {
+    height: 25px;
+    width: 25px;
+    padding-right: 20px;
+}
+
+.submit-btn img {
+    height: 25px;
+    width: 25px;
+    padding-left: 20px;
 }

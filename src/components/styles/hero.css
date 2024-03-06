@@ -1,14 +1,16 @@
 .hero-section {
-    height: 420px;
+    min-height: 300px;
     background-color: #495E57;
     width: 100%;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     position: relative;
     z-index: 1;
+    padding: 30px 0;
 }
 
 .accent-bar-top {
@@ -24,18 +26,27 @@
 
 .hero-content {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
-    width: 60%;
+    width: 100%;
+    max-width: 900px;
     margin: 0 auto;
 }
 
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .title {
-    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    padding-right: 20px;
+    align-items: center;
+    text-align: center;
+    width: 448px;
+    justify-content: center;
 }
 
 .title h1 {
@@ -45,6 +56,9 @@
     font-size: 64px;
     font-weight: 800;
     margin: 0;
+    text-align: left;
+    width: 448px;
+    margin-left: 100px;
 }
 
 .title h2 {
@@ -54,6 +68,17 @@
     font-size: 40px;
     font-weight: 800;
     margin: 0;
+    text-align: left;
+    width: 448px;
+    margin-left: 100px;
+}
+
+.title p {
+    width: 400px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
 }
 
 .hero-description {
@@ -61,8 +86,10 @@
     font-size: 20px;
     font-weight: 700;
     line-height: 1.5;
-    width: 400px;
-    margin: 40px 30px;
+    min-width: 300px;
+    width: 448px;
+    text-align: center;
+    margin: 0 auto 30px;
 }
 
 .reservation-btn {
@@ -76,19 +103,33 @@
     height: 60px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     border: 2px solid #000;
-    margin-left: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-bottom: 30px;
 }
 
 .reservation-btn:hover {
     color: #F4CE14;
     background-color: rgba(51, 51, 51, 0.5);
     border: 2px solid #F4CE14;
-  }
+}
+
+.hero-image-wrapper {
+    display: flex;
+    align-items: center;
+    min-width: 448px;
+    justify-content: center;
+}
 
 .hero-image {
-    min-width: 390px;
-    height: 340px;
+    min-width: 220px;
+    max-width: 220px;
+    min-height: 290px;
+    max-height: 290px;
     border-radius: 16px;
     border: 2px solid #F4CE14;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    align-self: center;
 }

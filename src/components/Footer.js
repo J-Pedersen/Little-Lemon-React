@@ -11,10 +11,12 @@ function Footer() {
         <>
             <footer>
                 <section>
-                    <img
-                        src={logoVerticalWhite}
-                        alt="Little Lemon Logo"
-                    />
+                    <div className='footerLogo'>
+                        <img
+                            src={logoVerticalWhite}
+                            alt="Little Lemon Logo"
+                        />
+                    </div>
                     <Sitemap />
                     <Contact />
                     <Social />

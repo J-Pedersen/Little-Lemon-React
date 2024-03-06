@@ -6,7 +6,7 @@ const SelectDatePicker = ({ onChange }) => {
   useEffect(() => {
     // Update the parent component with the selected date when it changes
     onChange({ target: { name: 'date', value: selectedDate.toISOString().split('T')[0] } });
-  }, [selectedDate, onChange]);
+  }, []); // Empty dependency array indicates that the effect should only run once
 
   const today = new Date();
   const endDate = new Date(today);

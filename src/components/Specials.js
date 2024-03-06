@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/normalize.css';
 import './styles/specials.css';
 import dishIcon from "../assets/dish-icon.png"
@@ -21,7 +22,9 @@ function Specials() {
                         <img src={dishIcon} alt="dish icon"></img>
                         <h1>Specials</h1>
                     </div>
-                    <button className= "online-menu-btn">ONLINE MENU</button>
+                </div>
+                <div className='button-wrapper'>
+                    <Link to="/menu" className= "online-menu-btn">ONLINE MENU</Link>
                 </div>
                 {/* Content */}
                 <div className='specials-content'>

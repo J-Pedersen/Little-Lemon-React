@@ -1,11 +1,14 @@
 header {
     height: 122px;
+    width: 100%;
     background-color: #EDEFEE;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: fixed;
+    top: 0;
     z-index: 2;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 header section {

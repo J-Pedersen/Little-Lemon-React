@@ -32,7 +32,20 @@ function BookingForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(formData);
+        const requiredFields = ['date', 'time', 'guests', 'firstName', 'lastName', 'contact'];
+
+        // Check if all required fields are filled
+        const isValid = requiredFields.every(field => formData[field]);
+
+        console.log("Form validity:", isValid); // Log the validity of the form
+
+        if (isValid) {
+            console.log("Form submitted successfully:", formData);
+            // Add logic to navigate to confirmation page or perform further actions
+        } else {
+            console.log("Please fill in all required fields.");
+            // Optionally, you can display an error message to the user or highlight the missing fields
+        }
     };
 
     return (
@@ -85,7 +98,6 @@ function BookingForm() {
                                     className="group-icon icon"
                                 />
                                 <select id="guests" name="guests" value={formData.guests} onChange={handleChange} required >
-                                    <option value="">Guests</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -108,21 +120,21 @@ function BookingForm() {
                                 <span className="required">*&nbsp;</span>
                                 First Name
                             </label>
-                            <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} required />
+                            <input type="text" id="firstName" name="firstName" value={formData.firstName} onChange={handleChange} minLength="2" maxLength="30" required />
                         </div>
                         <div className="field-col">
                             <label htmlFor="lastName">
                                 <span className="required">*&nbsp;</span>
                                 Last Name
                             </label>
-                            <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} required />
+                            <input type="text" id="lastName" name="lastName" value={formData.lastName} onChange={handleChange} minLength="2" maxLength="30" required />
                         </div>
                         <div className="field-col">
                             <label htmlFor="contact">
                                 <span className="required">*&nbsp;</span>
                                 Phone # or Email Address
                             </label>
-                            <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} required />
+                            <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} placeholder="Phone # or Email" maxLength="30" required />
                         </div>
                     </fieldset>
 

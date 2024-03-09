@@ -17,7 +17,7 @@ function Routing() {
 
             <Route path="/menu" element={<Menu />} />
 
-            <Route path="/booking" element={<Booking />} />
+            <Route path="/booking" render={(props) => <Booking {...props} />} />
 
             <Route path="/cart" element={<Cart />} />
 

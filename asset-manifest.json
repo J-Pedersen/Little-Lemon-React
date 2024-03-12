@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/little-lemon-react/static/css/main.8ad2540e.css",
-    "main.js": "/little-lemon-react/static/js/main.51e41fc3.js",
+    "main.css": "/little-lemon-react/static/css/main.378b9e9f.css",
+    "main.js": "/little-lemon-react/static/js/main.4a34f434.js",
     "static/js/453.59707f9c.chunk.js": "/little-lemon-react/static/js/453.59707f9c.chunk.js",
     "static/media/Chris.png": "/little-lemon-react/static/media/Chris.11f95d70b111e58e9e23.png",
     "static/media/Jane.png": "/little-lemon-react/static/media/Jane.415cc0d7c3c90e39b4b6.png",
@@ -13,15 +13,16 @@
     "static/media/greek-salad.png": "/little-lemon-react/static/media/greek-salad.d9251e509aabd0f81d97.png",
     "static/media/dolmades.png": "/little-lemon-react/static/media/dolmades.89f8f23d22504876663b.png",
     "static/media/Andrea.png": "/little-lemon-react/static/media/Andrea.5ae6d75c9d92a481bb95.png",
+    "static/media/dining.png": "/little-lemon-react/static/media/dining.813aee39ee4bd90ed558.png",
     "static/media/logoHorizontalGreen.png": "/little-lemon-react/static/media/logoHorizontalGreen.31f6b8604e02a6c825c7.png",
     "static/media/logoVerticalWhite.png": "/little-lemon-react/static/media/logoVerticalWhite.81459e48722eb4deacb5.png",
     "index.html": "/little-lemon-react/index.html",
-    "main.8ad2540e.css.map": "/little-lemon-react/static/css/main.8ad2540e.css.map",
-    "main.51e41fc3.js.map": "/little-lemon-react/static/js/main.51e41fc3.js.map",
+    "main.378b9e9f.css.map": "/little-lemon-react/static/css/main.378b9e9f.css.map",
+    "main.4a34f434.js.map": "/little-lemon-react/static/js/main.4a34f434.js.map",
     "453.59707f9c.chunk.js.map": "/little-lemon-react/static/js/453.59707f9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8ad2540e.css",
-    "static/js/main.51e41fc3.js"
+    "static/css/main.378b9e9f.css",
+    "static/js/main.4a34f434.js"
   ]
 }

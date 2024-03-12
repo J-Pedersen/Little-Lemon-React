@@ -21,12 +21,20 @@ function Hero() {
                             focused on traditional recipes
                             served with a modern twist.
                         </p>
-                        <Link to="/booking" className="reservation-btn">RESERVE A TABLE</Link>
+                        <Link
+                            to="/booking"
+                            className="reservation-btn"
+                            alt="RESERVE A TABLE"
+                            title="RESERVE A TABLE"
+                        >
+                            RESERVE A TABLE
+                        </Link>
                     </div>
                     <div className='hero-image-wrapper'>
                         <img
                             src={hero}
-                            alt="Hero"
+                            alt="A chef holding a tray of food"
+                            title="A chef holding a tray of food"
                             className="hero-image"
                         />
                     </div>

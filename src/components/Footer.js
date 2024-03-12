@@ -4,7 +4,7 @@ import Contact from '../components/Contact';
 import Social from '../components/Social';
 import logoVerticalWhite from '../assets/logoVerticalWhite.png';
 import './styles/normalize.css';
-import './styles/footer.css'; // Import the CSS file
+import './styles/footer.css';
 
 function Footer() {
     return (
@@ -15,6 +15,7 @@ function Footer() {
                         <img
                             src={logoVerticalWhite}
                             alt="Little Lemon Logo"
+                            title="Little Lemon Logo"
                         />
                     </div>
                     <Sitemap />

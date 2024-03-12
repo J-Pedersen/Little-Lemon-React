@@ -11,6 +11,7 @@ function Header() {
                     <img
                         src={logoHorizontalGreen}
                         alt="Little Lemon Logo"
+                        title="Little Lemon Logo"
                     />
                     <MobileNavigation />
                 </section>

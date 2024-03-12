@@ -7,7 +7,7 @@ function Header() {
     return (
         <>
             <header>
-                <section>
+                <section role="banner" aria-label="Header">
                     <img
                         src={logoHorizontalGreen}
                         alt="Little Lemon Logo"

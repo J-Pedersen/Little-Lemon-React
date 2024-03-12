@@ -10,10 +10,10 @@ function ThankYou() {
 
     return (
         <>
-            <section className="thankyou-section">
-                <div className="accent-bar-top" />
+            <section className="thankyou-section" aria-labelledby="thankyou-heading">
+                <div className="accent-bar-top" role="presentation" />
                 <div className='thankyou-column'>
-                    <h1 className='thankyou-heading'>Thank You!</h1>
+                    <h1 className='thankyou-heading' id="thankyou-heading">Thank You!</h1>
                     <h2 className='confirmed-message'>Your reservation is confirmed!</h2>
                 </div>
                 <img
@@ -21,13 +21,14 @@ function ThankYou() {
                     alt="Couple Dining"
                     className="thankyou-image"
                     title="Couple Dining"
+                    aria-label="Couple Dining"
                 />
                 <div className='thankyou-column'>
                     <h2 className='booking-details'>Reservation Details</h2>
                     <p className='details-message'>Your reservation for {state.guests} guests is confirmed for {state.date} at {state.time}</p>
                     <p className='help-message'>If you require anything special please let us know we are happy to help!</p>
                 </div>
-                <div className="accent-bar-bottom" />
+                <div className="accent-bar-bottom" role="presentation" />
             </section>
         </>
     );

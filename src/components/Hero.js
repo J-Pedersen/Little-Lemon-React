@@ -7,9 +7,9 @@ import './styles/hero.css';
 
 function Hero() {
     return (
-        <section className="hero-section">
+        <section className="hero-section" aria-label="Hero section">
 
-            <div className="accent-bar-top" />
+            <div className="accent-bar-top" role="presentation" aria-hidden="true" />
 
             <div className="hero-content">
                 <div className='hero-wrapper'>
@@ -26,6 +26,7 @@ function Hero() {
                             className="reservation-btn"
                             alt="RESERVE A TABLE"
                             title="RESERVE A TABLE"
+                            aria-label="Reserve a Table"
                         >
                             RESERVE A TABLE
                         </Link>

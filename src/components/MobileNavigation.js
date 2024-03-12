@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import { HashLink } from "react-router-hash-link";
 import './styles/normalize.css';
 import './styles/navigation.css';
-import { HashLink } from "react-router-hash-link";
 
 function MobileNavigation() {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,14 +12,14 @@ function MobileNavigation() {
     };
 
     return (
-        <nav className={`mobile-navigation ${isOpen ? 'open' : ''}`}>
-            <div className="hamburger-menu" onClick={toggleMenu}>
+        <nav className={`mobile-navigation ${isOpen ? 'open' : ''}`} role="navigation">
+            <div className="hamburger-menu" onClick={toggleMenu} role="button" aria-label="Toggle Menu">
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-            <menu>
-                <li>
+            <menu role="menubar">
+                <li role="menuitem">
                     <NavLink
                         to="/"
                         className='nav-link'
@@ -30,7 +30,7 @@ function MobileNavigation() {
                         HOME
                     </NavLink>
                 </li>
-                <li>
+                <li role="menuitem">
                     <HashLink
                         to="/#about"
                         smooth={true}
@@ -44,7 +44,7 @@ function MobileNavigation() {
                         ABOUT
                     </HashLink>
                 </li>
-                <li>
+                <li role="menuitem">
                     <NavLink
                         to="/menu"
                         className='nav-link'
@@ -55,7 +55,7 @@ function MobileNavigation() {
                         MENU
                     </NavLink>
                 </li>
-                <li>
+                <li role="menuitem">
                     <NavLink
                         to="/booking"
                         className='nav-link'
@@ -66,7 +66,7 @@ function MobileNavigation() {
                         RESERVATIONS
                     </NavLink>
                 </li>
-                <li>
+                <li role="menuitem">
                     <NavLink
                         to="/cart"
                         className='nav-link'
@@ -77,7 +77,7 @@ function MobileNavigation() {
                         ORDER ONLINE
                     </NavLink>
                 </li>
-                <li>
+                <li role="menuitem">
                     <NavLink
                         to="/login"
                         className='nav-link'

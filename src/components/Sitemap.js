@@ -1,7 +1,7 @@
-import './styles/normalize.css';
-import './styles/sitemap.css';
 import { Link } from 'react-router-dom';
 import { HashLink } from "react-router-hash-link";
+import './styles/normalize.css';
+import './styles/sitemap.css';
 
 function Sitemap() {
     function scrollToTop() {
@@ -12,9 +12,9 @@ function Sitemap() {
     }
     return (
         <>
-            <section className="sitemap-section">
-                <h3 className="sitemap-title">SITEMAP</h3>
-                <nav className="sitemap-nav">
+            <section className="sitemap-section" aria-labelledby="sitemap-heading">
+                <h3 className="sitemap-title" id="sitemap-heading">SITEMAP</h3>
+                <nav className="sitemap-nav" aria-label="Site Navigation">
                     <menu className="sitemap-menu">
                         <li>
                             <Link

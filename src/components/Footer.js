@@ -9,7 +9,7 @@ import './styles/footer.css';
 function Footer() {
     return (
         <>
-            <footer>
+            <footer role="contentinfo">
                 <section>
                     <div className='footerLogo'>
                         <img

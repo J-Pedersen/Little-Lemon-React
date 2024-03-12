@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './styles/normalize.css';
-import './styles/specials.css';
 import dishIcon from "../assets/dish-icon.png"
 import greekSalad from "../assets/dishes/greek-salad.png"
 import dolmades from "../assets/dishes/dolmades.png"
 import pizza from "../assets/dishes/pizza.png"
 import delivery from "../assets/delivery.png"
 import deliveryHover from "../assets/delivery-hover.png"
+import './styles/normalize.css';
+import './styles/specials.css';
 
 function Specials() {
     const [deliveryImage1, setDeliveryImage1] = React.useState(delivery);
@@ -19,7 +19,11 @@ function Specials() {
             <section className="specials-section">
                 <div className= "specials-header">
                     <div className= "specials-title">
-                        <img src={dishIcon} alt="dish icon"></img>
+                        <img
+                            src={dishIcon}
+                            alt="dish icon"
+                            aria-hidden="true"
+                        />
                         <h1>Specials</h1>
                     </div>
                 </div>
@@ -33,12 +37,13 @@ function Specials() {
                     </Link>
                 </div>
                 {/* Content */}
-                <div className='specials-content'>
+                <div className='specials-content' role="list">
                     <article className='specials-card'>
                         <img
                             src={greekSalad}
                             alt='Greek salad'
                             title="Greek Salad"
+                            aria-label="Greek Salad"
                         />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
@@ -55,11 +60,13 @@ function Specials() {
                             title="Order A Delivery"
                             onMouseEnter={() => setDeliveryImage1(deliveryHover)}
                             onMouseLeave={() => setDeliveryImage1(delivery)}
+                            aria-label="Order Greek Salad Delivery"
                         >
                             Order A Delivery
                             <img
                                 src={deliveryImage1}
                                 alt='delivery'
+                                aria-hidden="true"
                             />
                         </button>
                     </article>
@@ -68,6 +75,7 @@ function Specials() {
                             src={dolmades}
                             alt='Dolmades'
                             title="Dolmades"
+                            aria-label="Dolmades"
                         />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
@@ -82,11 +90,13 @@ function Specials() {
                             title="Order A Delivery"
                             onMouseEnter={() => setDeliveryImage2(deliveryHover)}
                             onMouseLeave={() => setDeliveryImage2(delivery)}
+                            aria-label="Order Dolmades Delivery"
                         >
                             Order A Delivery
                             <img
                                 src={deliveryImage2}
                                 alt='delivery'
+                                aria-hidden="true"
                             />
                         </button>
                     </article>
@@ -95,6 +105,7 @@ function Specials() {
                             src={pizza}
                             alt='Pizza'
                             title="Pizza"
+                            aria-label="Pizza"
                         />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
@@ -111,11 +122,13 @@ function Specials() {
                                 title="Order A Delivery"
                                 onMouseEnter={() => setDeliveryImage3(deliveryHover)}
                                 onMouseLeave={() => setDeliveryImage3(delivery)}
+                                aria-label="Order Pizza Delivery"
                             >
                                 Order A Delivery
                                 <img
                                     src={deliveryImage3}
                                     alt='delivery'
+                                    aria-hidden="true"
                                 />
                             </button>
                     </article>

@@ -17,7 +17,15 @@ function Sitemap() {
                 <nav className="sitemap-nav">
                     <menu className="sitemap-menu">
                         <li>
-                            <Link to="/" className='nav-link' onClick={scrollToTop}>HOME</Link>
+                            <Link
+                                to="/"
+                                className='nav-link'
+                                alt="HOME"
+                                title="HOME"
+                                onClick={scrollToTop}
+                            >
+                                HOME
+                            </Link>
                         </li>
                         <li>
                             <HashLink
@@ -26,21 +34,55 @@ function Sitemap() {
                                 duration={500}
                                 offset={-50}
                                 className='nav-link'
+                                alt="ABOUT"
+                                title="ABOUT"
                             >
                                 ABOUT
                             </HashLink>
                         </li>
                         <li>
-                            <Link to="/menu"  className='nav-link' onClick={scrollToTop}>MENU</Link>
+                            <Link
+                                to="/menu"
+                                className='nav-link'
+                                alt="MENU"
+                                title="MENU"
+                                onClick={scrollToTop}
+                            >
+                                MENU
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/booking"  className='nav-link' onClick={scrollToTop}>RESERVATIONS</Link>
+                            <Link
+                                to="/booking"
+                                className='nav-link'
+                                alt="RESERVATIONS"
+                                title="RESERVATIONS"
+                                onClick={scrollToTop}
+                            >
+                                RESERVATIONS
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/cart"  className='nav-link' onClick={scrollToTop}>ORDER ONLINE</Link>
+                            <Link
+                                to="/cart"
+                                className='nav-link'
+                                alt="ORDER ONLINE"
+                                title="ORDER ONLINE"
+                                onClick={scrollToTop}
+                            >
+                                ORDER ONLINE
+                            </Link>
                         </li>
                         <li>
-                            <Link to="/login"  className='nav-link' onClick={scrollToTop}>LOGIN</Link>
+                            <Link
+                                to="/login"
+                                className='nav-link'
+                                alt="LOGIN"
+                                title="LOGIN"
+                                onClick={scrollToTop}
+                            >
+                                LOGIN
+                            </Link>
                         </li>
                     </menu>
                 </nav>

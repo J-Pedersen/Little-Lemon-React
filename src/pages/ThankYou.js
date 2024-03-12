@@ -20,6 +20,7 @@ function ThankYou() {
                     src={dining}
                     alt="Couple Dining"
                     className="thankyou-image"
+                    title="Couple Dining"
                 />
                 <div className='thankyou-column'>
                     <h2 className='booking-details'>Reservation Details</h2>

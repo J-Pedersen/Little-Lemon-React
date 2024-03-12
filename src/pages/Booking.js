@@ -32,7 +32,6 @@ function Booking() {
 
     useEffect((formikProps) => {
         if (step === 1) {
-            // Manually trigger form validation when user navigates back to step 1
             validateForm(formikProps);
         }
     }, [step]);
@@ -57,33 +56,54 @@ function Booking() {
     };
 
     const handleConfirm = () => {
-        // Submit form and redirect to ThankYou page
         console.log('Form submitted:', formData);
         navigate('/thankyou', { state: formData });
     };
+
+    const formatPhoneNumber = (value) => {
+        const cleaned = value.replace(/\D/g, '');
+
+        if (cleaned.length < 4) {
+          return cleaned;
+        } else if (cleaned.length < 7) {
+          return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3)}`;
+        } else {
+          return `(${cleaned.slice(0, 3)}) ${cleaned.slice(3, 6)}-${cleaned.slice(6, 10)}`;
+        }
+      };
 
     return (
         <>
             <section className="booking-section">
             <div className="accent-bar-top" />
-                {/* Your form components for step 1 */}
+                {/* Form Inputs Step 1 */}
                 {step === 1 && (
                     <Formik
-                        initialValues={formData}
+                    initialValues={{
+                        ...formData,
+                        phone: ''
+                    }}
                         enableReinitialize
                         validationSchema={BookingSchema}
                         onSubmit={handleSubmit}
                     >
-                        {({ isSubmitting, errors, touched, resetForm, isValid }) => (
+                        {({ isSubmitting, errors, touched, resetForm, isValid, setFieldValue }) => (
                         <Form className="reservation-form">
                             <h1>RESERVE A TABLE</h1>
                             <div className='field-wrapper'>
-                                <fieldset className="column-reserve-info">
-                                    <legend>RESERVATION INFO</legend>
+                                <fieldset className="column-reserve-info" aria-labelledby="reserve-info-heading">
+                                    <legend id="reserve-info-heading">RESERVATION INFO</legend>
                                     <div className={`field-col`}>
                                         <label htmlFor="date">
-                                            <span className="required">*&nbsp;</span>
-                                            Date <ErrorMessage name="date" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Date
+                                            <ErrorMessage
+                                                name="date"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
                                         <div className='input-group'>
                                             <img
@@ -91,7 +111,15 @@ function Booking() {
                                                 alt="Calendar"
                                                 className="calendar-icon icon"
                                             />
-                                            <Field as="select" name="date" id="date">
+                                            <Field
+                                                as="select"
+                                                name="date"
+                                                id="date"
+                                                required
+                                                aria-required="true"
+                                                aria-label="Select Date"
+                                                title="Date"
+                                            >
                                                 <option value="">Select Date</option>
                                                 {Array.from({ length: 9 }, (_, index) => {
                                                     const date = new Date();
@@ -107,8 +135,15 @@ function Booking() {
                                     </div>
                                     <div className={`field-col`}>
                                         <label htmlFor="time">
-                                            <span className="required">*&nbsp;</span>
-                                            Time <ErrorMessage name="time" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Time
+                                            <ErrorMessage
+                                                name="time"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
                                         <div className='input-group'>
                                             <img
@@ -116,7 +151,15 @@ function Booking() {
                                                 alt="Clock"
                                                 className="clock-icon icon"
                                             />
-                                            <Field as="select" name="time" className="time-select" required>
+                                            <Field
+                                                as="select"
+                                                name="time"
+                                                className="time-select"
+                                                required
+                                                aria-required="true"
+                                                aria-label="Select Time"
+                                                title="Time"
+                                            >
                                                 <option value="">Select Time</option>
                                                 <option value="6:00 AM">6:00 AM</option>
                                                 <option value="6:30 AM">6:30 AM</option>
@@ -154,8 +197,15 @@ function Booking() {
                                     </div>
                                     <div className={`field-col`}>
                                         <label htmlFor="guests">
-                                            <span className="required">*&nbsp;</span>
-                                            Guests <ErrorMessage name="guests" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Guests
+                                            <ErrorMessage
+                                                name="guests"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
                                         <div className='input-group'>
                                             <img
@@ -163,7 +213,15 @@ function Booking() {
                                                 alt="Group"
                                                 className="group-icon icon"
                                             />
-                                            <Field as="select" name="guests" className="guests-select" required>
+                                            <Field
+                                                as="select"
+                                                name="guests"
+                                                className="guests-select"
+                                                required
+                                                aria-required="true"
+                                                aria-label="Select Number of Guests"
+                                                title="Guests"
+                                            >
                                                 <option value="">Select Guests</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -180,40 +238,103 @@ function Booking() {
                                     </div>
                                 </fieldset>
 
-                                {/* Contact info fields */}
-                                <fieldset className="column-contact-info">
-                                    <legend>CONTACT INFO</legend>
+                                <fieldset className="column-contact-info" aria-labelledby="contact-info-heading">
+                                    <legend id="contact-info-heading">CONTACT INFO</legend>
                                     <div className={`field-col`}>
                                         <label htmlFor="fullName">
-                                            <span className="required">*&nbsp;</span>
-                                            Name <ErrorMessage name="fullName" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Name
+                                            <ErrorMessage
+                                                name="fullName"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
-                                        <Field type="text" id="fullName" name="fullName" className="full-name-input" placeholder="Jane Doe" maxLength="50" required />
+                                        <Field
+                                            type="text"
+                                            id="fullName"
+                                            name="fullName"
+                                            className="full-name-input"
+                                            placeholder="Jane Doe"
+                                            maxLength="50"
+                                            required
+                                            aria-required="true"
+                                            aria-label="Full Name"
+                                            title="Full Name"
+                                        />
                                     </div>
                                     <div className={`field-col ${errors.phone && touched.phone ? 'error' : ''}`}>
                                         <label htmlFor="phone">
-                                            <span className="required">*&nbsp;</span>
-                                            Phone <ErrorMessage name="phone" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Phone
+                                            <ErrorMessage
+                                                name="phone"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
-                                        <Field type="tel" id="phone" name="phone" className="phone-input" placeholder="(555)555-5555" maxLength="13" required />
+                                        <Field
+                                            type="tel"
+                                            id="phone"
+                                            name="phone"
+                                            className="phone-input"
+                                            placeholder="(555)555-5555"
+                                            maxLength="14"
+                                            required
+                                            aria-required="true"
+                                            aria-label="Phone"
+                                            title="Phone"
+                                            onChange={(e) => {
+                                                const formattedValue = formatPhoneNumber(e.target.value);
+                                                setFieldValue('phone', formattedValue);
+                                            }}
+                                        />
                                     </div>
                                     <div className={`field-col ${errors.email && touched.email ? 'error' : ''}`}>
                                         <label htmlFor="email">
-                                            <span className="required">*&nbsp;</span>
-                                            Email <ErrorMessage name="email" component="div" className="error-message" />
+                                            <span className="required">
+                                                *&nbsp;
+                                            </span>
+                                            Email
+                                            <ErrorMessage
+                                                name="email"
+                                                component="div"
+                                                className="error-message"
+                                            />
                                         </label>
-                                        <Field type="email" id="email" name="email" className="email-input" placeholder="janedoe@fakemail.com" maxLength="30" required />
+                                        <Field
+                                            type="email"
+                                            id="email"
+                                            name="email"
+                                            className="email-input"
+                                            placeholder="janedoe@fakemail.com"
+                                            aria-label="Email"
+                                            maxLength="30"
+                                            required
+                                            aria-required="true"
+                                            title="Email"
+                                        />
                                     </div>
                                 </fieldset>
 
-                                {/* Special considerations fields */}
-                                <fieldset className="column-special-considerations">
-                                    <legend>SPECIAL CONSIDERATIONS</legend>
+                                <fieldset className="column-special-considerations" aria-labelledby="special-considerations-heading">
+                                    <legend id="special-considerations-heading">SPECIAL CONSIDERATIONS</legend>
                                     <div className="field-col sc-wrapper">
                                         <label htmlFor="occasion">
                                             Occasion
                                         </label>
-                                        <Field as="select" id="occasion" name="occasion" className='occasion'>
+                                        <Field
+                                            as="select"
+                                            id="occasion"
+                                            name="occasion"
+                                            className='occasion'
+                                            aria-label="Select Occasion"
+                                            title="Occasion"
+                                        >
                                             <option value="">🥂 Occasion</option>
                                             <option value="Birthday">🎂 Birthday</option>
                                             <option value="Engagement">💍 Engagement</option>
@@ -225,7 +346,6 @@ function Booking() {
                                             <option value="Bachelorette">🎉 Bachelorette</option>
                                             <option value="Mitzvah">✡️ Mitzvah</option>
                                         </Field>
-                                        <ErrorMessage name="occasion" component="div" className="error-message" />
                                     </div>
                                     <div className='sc-boxes'>
                                         <div className="field-row">
@@ -237,7 +357,19 @@ function Booking() {
                                             <label htmlFor="children">
                                                 Highchair
                                             </label>
-                                            <Field type="checkbox" name="children" className="box-inner" />
+                                            <Field
+                                                type="checkbox"
+                                                name="children"
+                                                className="box-inner"
+                                                aria-label="Highchair"
+                                                title="Highchair"
+                                                onKeyPress={(e) => {
+                                                    if (e.key === 'Enter') {
+                                                        e.preventDefault();
+                                                        e.target.click();
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                         <div className="field-row">
                                             <img
@@ -248,7 +380,19 @@ function Booking() {
                                             <label htmlFor="wheelchair">
                                                 Wheelchair
                                             </label>
-                                            <Field type="checkbox" name="wheelchair" className="box-inner" />
+                                            <Field
+                                                type="checkbox"
+                                                name="wheelchair"
+                                                className="box-inner"
+                                                aria-label="Wheelchair"
+                                                title="Wheelchair"
+                                                onKeyPress={(e) => {
+                                                    if (e.key === 'Enter') {
+                                                        e.preventDefault();
+                                                        e.target.click();
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                         <div className="field-row">
                                             <img
@@ -259,29 +403,48 @@ function Booking() {
                                             <label htmlFor="allergies">
                                                 Food Allergies
                                             </label>
-                                            <Field type="checkbox" name="allergies" className="box-inner" />
+                                            <Field
+                                                type="checkbox"
+                                                name="allergies"
+                                                className="box-inner"
+                                                aria-label="Food Allergies"
+                                                title="Food Allergies"
+                                                onKeyPress={(e) => {
+                                                    if (e.key === 'Enter') {
+                                                        e.preventDefault();
+                                                        e.target.click();
+                                                    }
+                                                }}
+                                            />
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                             {/* Book Buttons */}
-                            <div className="centered-btns">
+                            <div className="centered-btns" role="group" aria-label="Form buttons">
                                 <button
                                     type="button"
                                     className="clear-btn"
                                     onClick={() => resetForm()}
+                                    aria-label="Clear Form"
+                                    title="CLEAR"
                                 >
                                     CLEAR
                                 </button>
                                 <button
                                     type="submit"
                                     className="booking-btn"
+                                    title="CONTINUE"
                                     onMouseEnter={() => setContinueImage(ContinueHoverImage)}
                                     onMouseLeave={() => setContinueImage(ContinueImage)}
                                     disabled={!isValid || isSubmitting || (Object.keys(touched).length === 0 && touched.constructor === Object)}
+                                    aria-label="Continue"
                                 >
                                     CONTINUE
-                                    <img src={continueImage} alt="Continue Icon" />
+                                    <img
+                                        src={continueImage}
+                                        alt="Continue Icon"
+                                    />
                                 </button>
                             </div>
                         </Form>
@@ -289,11 +452,11 @@ function Booking() {
                     </Formik>
                 )}
 
-                {/* Step 2: Confirmation */}
+                {/* Confirmation Step 2 */}
                 {step === 2 && (
-                    <div className='confirmation-wrapper'>
-                        <h2 className='confirmation-heading'>Confirm Your Booking Details</h2>
-                        <div className='confirmation-group'>
+                    <div className='confirmation-wrapper' role="region" aria-labelledby="confirmation-heading">
+                        <h2 className='confirmation-heading' id="confirmation-heading">Confirm Your Table Reservation Details</h2>
+                        <div className='confirmation-group' role="group" aria-label="Reservation Details">
                             <div className='confirmation-column'>
                                 <p>Date: {formData.date}</p>
                                 <p>Time: {formData.time}</p>
@@ -318,9 +481,23 @@ function Booking() {
                             <p>If you require any changes to your table reservation click EDIT</p>
                         </div>
                         {/* Confirmation Buttons */}
-                        <div className="centered-btns">
-                            <button className='edit-btn' onClick={handleEdit}>EDIT</button>
-                            <button className='submit-btn' onClick={handleConfirm}>SUBMIT</button>
+                        <div className="centered-btns" role="group" aria-label="Confirmation Buttons">
+                            <button
+                                className='edit-btn'
+                                onClick={handleEdit}
+                                aria-label="Edit Reservation"
+                                title="EDIT"
+                            >
+                                EDIT
+                            </button>
+                            <button
+                                className='submit-btn'
+                                onClick={handleConfirm}
+                                aria-label="Confirm Reservation"
+                                title="SUBMIT"
+                            >
+                                SUBMIT
+                            </button>
                         </div>
                     </div>
                 )}

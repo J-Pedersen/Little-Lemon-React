@@ -15,15 +15,20 @@ function Reviews() {
                 <div className='reviews-wrapper'>
                     <article className='review-card'>
                         <div className='review-upper'>
-                            <img src={Andy} alt="Andy" className='reviewer'></img>
+                            <img
+                                src={Andy}
+                                alt="Andy"
+                                title="Andy"
+                                className='reviewer'
+                            />
                             <div className='review-upper-right'>
                                 <h3 className='reviewer-name'>Andy</h3>
                                 <div classname='rating'>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
                                 </div>
                             </div>
                         </div>
@@ -31,14 +36,19 @@ function Reviews() {
                     </article>
                     <article className='review-card'>
                         <div className='review-upper'>
-                            <img src={Andrea} alt="Andrea" className='reviewer'></img>
+                            <img
+                                src={Andrea}
+                                alt="Andrea"
+                                title="Andrea"
+                                className='reviewer'
+                            />
                             <div className='review-upper-right'>
                                 <h3 className='reviewer-name'>Andrea</h3>
                                 <div classname='rating'>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
                                 </div>
                             </div>
                         </div>
@@ -50,15 +60,20 @@ function Reviews() {
                     </article>
                     <article className='review-card'>
                         <div className='review-upper'>
-                            <img src={Chris} alt="Chris" className='reviewer'></img>
+                            <img
+                                src={Chris}
+                                alt="Chris"
+                                title="Chris"
+                                className='reviewer'
+                            />
                             <div className='review-upper-right'>
                                 <h3 className='reviewer-name'>Chris</h3>
                                 <div classname='rating'>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
                                 </div>
                             </div>
                         </div>
@@ -69,15 +84,19 @@ function Reviews() {
                     </article>
                     <article className='review-card'>
                         <div className='review-upper'>
-                            <img src={Jane} alt="Jane" className='reviewer'></img>
+                            <img
+                                src={Jane}
+                                alt="Jane"
+                                title="Jane"
+                                className='reviewer'
+                            />
                             <div className='review-upper-right'>
                                 <h3 className='reviewer-name'>Jane</h3>
                                 <div classname='rating'>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
-                                    <img src={Star} alt="Star" className='star'></img>
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
+                                    <img src={Star} alt="Star" className='star' />
                                 </div>
                             </div>
                         </div>

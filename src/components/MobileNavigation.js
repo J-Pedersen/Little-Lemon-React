@@ -20,7 +20,15 @@ function MobileNavigation() {
             </div>
             <menu>
                 <li>
-                    <NavLink to="/" className='nav-link' onClick={toggleMenu}>HOME</NavLink>
+                    <NavLink
+                        to="/"
+                        className='nav-link'
+                        alt="HOME"
+                        title="HOME"
+                        onClick={toggleMenu}
+                    >
+                        HOME
+                    </NavLink>
                 </li>
                 <li>
                     <HashLink
@@ -29,22 +37,56 @@ function MobileNavigation() {
                         duration={500}
                         offset={-50}
                         className='nav-link'
+                        alt="ABOUT"
+                        title="ABOUT"
                         onClick={toggleMenu}
                     >
                         ABOUT
                     </HashLink>
                 </li>
                 <li>
-                    <NavLink to="/menu" className='nav-link' onClick={toggleMenu}>MENU</NavLink>
+                    <NavLink
+                        to="/menu"
+                        className='nav-link'
+                        alt="MENU"
+                        title="MENU"
+                        onClick={toggleMenu}
+                    >
+                        MENU
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/booking" className='nav-link' onClick={toggleMenu}>RESERVATIONS</NavLink>
+                    <NavLink
+                        to="/booking"
+                        className='nav-link'
+                        alt="RESERVATIONS"
+                        title="RESERVATIONS"
+                        onClick={toggleMenu}
+                    >
+                        RESERVATIONS
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/cart" className='nav-link' onClick={toggleMenu}>ORDER ONLINE</NavLink>
+                    <NavLink
+                        to="/cart"
+                        className='nav-link'
+                        alt="ORDER ONLINE"
+                        title="ORDER ONLINE"
+                        onClick={toggleMenu}
+                    >
+                        ORDER ONLINE
+                    </NavLink>
                 </li>
                 <li>
-                    <NavLink to="/login" className='nav-link' onClick={toggleMenu}>LOGIN</NavLink>
+                    <NavLink
+                        to="/login"
+                        className='nav-link'
+                        alt="LOGIN"
+                        title="LOGIN"
+                        onClick={toggleMenu}
+                    >
+                        LOGIN
+                    </NavLink>
                 </li>
             </menu>
         </nav>

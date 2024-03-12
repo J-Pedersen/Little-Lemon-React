@@ -24,12 +24,22 @@ function Specials() {
                     </div>
                 </div>
                 <div className='button-wrapper'>
-                    <Link to="/menu" className= "online-menu-btn">ONLINE MENU</Link>
+                    <Link
+                        to="/menu"
+                        className= "online-menu-btn"
+                        title="ONLINE MENU"
+                    >
+                        ONLINE MENU
+                    </Link>
                 </div>
                 {/* Content */}
                 <div className='specials-content'>
                     <article className='specials-card'>
-                        <img src={greekSalad} alt='Greek salad'></img>
+                        <img
+                            src={greekSalad}
+                            alt='Greek salad'
+                            title="Greek Salad"
+                        />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
                             <h3>Greek Salad</h3>
@@ -42,15 +52,23 @@ function Specials() {
                         </p>
                         <button
                             className='add-to-cart-btn'
+                            title="Order A Delivery"
                             onMouseEnter={() => setDeliveryImage1(deliveryHover)}
                             onMouseLeave={() => setDeliveryImage1(delivery)}
                         >
                             Order A Delivery
-                            <img src={deliveryImage1} alt='delivery'></img>
+                            <img
+                                src={deliveryImage1}
+                                alt='delivery'
+                            />
                         </button>
                     </article>
                     <article className='specials-card'>
-                        <img src={dolmades} alt='Dolmades'></img>
+                        <img
+                            src={dolmades}
+                            alt='Dolmades'
+                            title="Dolmades"
+                        />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
                             <h3>Dolmades</h3>
@@ -61,15 +79,23 @@ function Specials() {
                         </p>
                         <button
                             className='add-to-cart-btn'
+                            title="Order A Delivery"
                             onMouseEnter={() => setDeliveryImage2(deliveryHover)}
                             onMouseLeave={() => setDeliveryImage2(delivery)}
                         >
                             Order A Delivery
-                            <img src={deliveryImage2} alt='delivery'></img>
+                            <img
+                                src={deliveryImage2}
+                                alt='delivery'
+                            />
                         </button>
                     </article>
                     <article className='specials-card'>
-                        <img src={pizza} alt='Pizza'></img>
+                        <img
+                            src={pizza}
+                            alt='Pizza'
+                            title="Pizza"
+                        />
                         <hr className='card-accent-bar'></hr>
                         <div className='specials-card-header'>
                             <h3>Pizza</h3>
@@ -82,11 +108,15 @@ function Specials() {
                             </p>
                             <button
                                 className='add-to-cart-btn'
+                                title="Order A Delivery"
                                 onMouseEnter={() => setDeliveryImage3(deliveryHover)}
                                 onMouseLeave={() => setDeliveryImage3(delivery)}
                             >
                                 Order A Delivery
-                                <img src={deliveryImage3} alt='delivery'></img>
+                                <img
+                                    src={deliveryImage3}
+                                    alt='delivery'
+                                />
                             </button>
                     </article>
                 </div>

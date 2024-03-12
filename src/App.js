@@ -7,7 +7,6 @@ import Menu from './pages/Menu';
 import Booking from './pages/Booking';
 import Cart from './pages/Cart';
 import Login from './pages/Login';
-import Confirmation from './pages/Confirmation';
 import ThankYou from './pages/ThankYou';
 import './components/styles/normalize.css';
 
@@ -24,8 +23,6 @@ function App() {
         return <Cart />;
       case '/login':
         return <Login />;
-      case '/confirmation':
-          return <Confirmation />;
       case '/thankyou':
           return <ThankYou />;
       default:

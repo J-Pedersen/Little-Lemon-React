@@ -8,11 +8,11 @@
     text-align: center;
     align-content: center;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 26px;
     margin-top: 122px;
 }
 
-.centered-link {
+.centered-btns {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
@@ -58,7 +58,7 @@
     cursor: pointer;
 }
 
-.box input {
+.box-inner {
     accent-color: #F4CE14;
 }
 
@@ -146,6 +146,8 @@
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
+.submit-btn,
+.edit-btn,
 .clear-btn,
 .booking-btn {
     font-family: Karla;
@@ -165,6 +167,9 @@
     text-decoration: none;
 }
 
+
+.submit-btn:hover,
+.edit-btn:hover,
 .clear-btn:hover,
 .booking-btn:hover {
     color: #F4CE14;
@@ -208,4 +213,71 @@ select {
 .select option {
     background-color: #33333387;
     color: #F4CE14;
+}
+
+.booking-btn:disabled {
+    color: #000;
+    background-color: #ccc;
+    border: #000;
+    cursor: not-allowed;
+  }
+
+.booking-btn:disabled:hover {
+    color: #000;
+    background-color: #ccc;
+    border: #000;
+    cursor: not-allowed;
+}
+
+.confirmation-heading {
+    color: #F4CE14;
+    padding-top: 30px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: Markazi Text;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.confirmation-group {
+    display: flex;
+    width: 90%;
+    gap: 15px;
+    min-height: 240px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.confirmation-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 280px;
+    width: 280px;
+    height: 240px;
+    gap: 5px;
+    padding: 10px;
+}
+
+.confirmation-column p {
+    color: #fff;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: Karla;
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.confirmation-message {
+    color: #F4CE14;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: Karla;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.chk-boxes {
+    display: flex;
+    flex-direction: column;
+    height: 100px;
+    gap: 5px;
 }

@@ -7,7 +7,9 @@ import Children from '../assets/children.png';
 import Calendar from '../assets/calendar.png';
 import Clock from '../assets/clock.png';
 import Group from '../assets/group.png';
-
+import '../components/styles/normalize.css';
+import '../components/styles/booking.css';
+{({ isSubmitting, errors, touched, resetForm, isValid }) => (
 function BookingForm() {
     const [formData, setFormData] = useState({
         date: '',
@@ -32,20 +34,7 @@ function BookingForm() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const requiredFields = ['date', 'time', 'guests', 'firstName', 'lastName', 'contact'];
-
-        // Check if all required fields are filled
-        const isValid = requiredFields.every(field => formData[field]);
-
-        console.log("Form validity:", isValid); // Log the validity of the form
-
-        if (isValid) {
-            console.log("Form submitted successfully:", formData);
-            // Add logic to navigate to confirmation page or perform further actions
-        } else {
-            console.log("Please fill in all required fields.");
-            // Optionally, you can display an error message to the user or highlight the missing fields
-        }
+        console.log(formData);
     };
 
     return (
@@ -98,6 +87,7 @@ function BookingForm() {
                                     className="group-icon icon"
                                 />
                                 <select id="guests" name="guests" value={formData.guests} onChange={handleChange} required >
+
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>

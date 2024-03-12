@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import Allergies from '../assets/allergies.png';
 import Wheelchair from '../assets/wheelchair.png';
@@ -9,38 +9,72 @@ import Group from '../assets/group.png';
 import ContinueHoverImage from "../assets/continue-hover.png";
 import ContinueImage from "../assets/continue.png";
 import BookingSchema from '../components/schema/BookingSchema';
+import { useNavigate } from 'react-router-dom';
 import '../components/styles/normalize.css';
 import '../components/styles/booking.css';
 
 function Booking() {
     const [continueImage, setContinueImage] = useState(ContinueImage);
+    const [step, setStep] = useState(1);
+    const navigate = useNavigate();
+    const [formData, setFormData] = useState({
+        date: '',
+        time: '',
+        guests: '',
+        fullName: '',
+        phone: '',
+        email: '',
+        occasion: '',
+        children: false,
+        wheelchair: false,
+        allergies: false,
+    });
+
+    useEffect((formikProps) => {
+        if (step === 1) {
+            // Manually trigger form validation when user navigates back to step 1
+            validateForm(formikProps);
+        }
+    }, [step]);
+
+    const validateForm = (formikProps) => {
+        if (formikProps) {
+            formikProps.validateForm().then((errors) => {
+                if (Object.keys(errors).length === 0) {
+                    formikProps.setTouched({});
+                }
+            });
+        }
+    };
+
+    const handleSubmit = (values) => {
+        setFormData(values);
+        setStep(2);
+    };
+
+    const handleEdit = () => {
+        setStep(1);
+    };
+
+    const handleConfirm = () => {
+        // Submit form and redirect to ThankYou page
+        console.log('Form submitted:', formData);
+        navigate('/thankyou', { state: formData });
+    };
 
     return (
         <>
             <section className="booking-section">
-                <div className="accent-bar-top" />
-                <Formik
-                    initialValues={{
-                        date: '',
-                        time: '',
-                        guests: '',
-                        fullName: '',
-                        phone: '',
-                        email: '',
-                        occasion: '',
-                        children: false,
-                        wheelchair: false,
-                        allergies: false,
-                    }}
-                    validationSchema={BookingSchema} // Using the imported schema
-                    onSubmit={(values, { setSubmitting }) => {
-                        setTimeout(() => {
-                            console.log('Form submitted:', values);
-                            setSubmitting(false);
-                        }, 400);
-                    }}
-                >
-                    {({ isSubmitting, errors, touched, resetForm }) => (
+            <div className="accent-bar-top" />
+                {/* Your form components for step 1 */}
+                {step === 1 && (
+                    <Formik
+                        initialValues={formData}
+                        enableReinitialize
+                        validationSchema={BookingSchema}
+                        onSubmit={handleSubmit}
+                    >
+                        {({ isSubmitting, errors, touched, resetForm, isValid }) => (
                         <Form className="reservation-form">
                             <h1>RESERVE A TABLE</h1>
                             <div className='field-wrapper'>
@@ -84,37 +118,37 @@ function Booking() {
                                             />
                                             <Field as="select" name="time" className="time-select" required>
                                                 <option value="">Select Time</option>
-                                                <option value="6am">6:00 AM</option>
-                                                <option value="630am">6:30 AM</option>
-                                                <option value="7am">7:00 AM</option>
-                                                <option value="730am">7:30 AM</option>
-                                                <option value="8am">8:00 AM</option>
-                                                <option value="830am">8:30 AM</option>
-                                                <option value="9am">9:00 AM</option>
-                                                <option value="930am">9:30 AM</option>
-                                                <option value="10am">10:00 AM</option>
-                                                <option value="1030am">10:30 AM</option>
-                                                <option value="11am">11:00 AM</option>
-                                                <option value="1130am">11:30 AM</option>
-                                                <option value="12pm">12:00 PM</option>
-                                                <option value="1230pm">12:30 PM</option>
-                                                <option value="1pm">1:00 PM</option>
-                                                <option value="130pm">1:30 PM</option>
-                                                <option value="2pm">2:00 PM</option>
-                                                <option value="230pm">2:30 PM</option>
-                                                <option value="3pm">3:00 PM</option>
-                                                <option value="330pm">3:30 PM</option>
-                                                <option value="4pm">4:00 PM</option>
-                                                <option value="430pm">4:30 PM</option>
-                                                <option value="5pm">5:00 PM</option>
-                                                <option value="530pm">5:30 PM</option>
-                                                <option value="6pm">6:00 PM</option>
-                                                <option value="630pm">6:30 PM</option>
-                                                <option value="7pm">7:00 PM</option>
-                                                <option value="730pm">7:30 PM</option>
-                                                <option value="8pm">8:00 PM</option>
-                                                <option value="830pm">8:30 PM</option>
-                                                <option value="9pm">9:00 PM</option>
+                                                <option value="6:00 AM">6:00 AM</option>
+                                                <option value="6:30 AM">6:30 AM</option>
+                                                <option value="7:00 AM">7:00 AM</option>
+                                                <option value="7:30 AM">7:30 AM</option>
+                                                <option value="8:00 AM">8:00 AM</option>
+                                                <option value="8:30 AM">8:30 AM</option>
+                                                <option value="9:00 AM">9:00 AM</option>
+                                                <option value="9:30 AM">9:30 AM</option>
+                                                <option value="10:00 AM">10:00 AM</option>
+                                                <option value="10:30 AM">10:30 AM</option>
+                                                <option value="11:00 AM">11:00 AM</option>
+                                                <option value="11:30 AM">11:30 AM</option>
+                                                <option value="12:00 PM">12:00 PM</option>
+                                                <option value="12:30 PM">12:30 PM</option>
+                                                <option value="1:00 PM">1:00 PM</option>
+                                                <option value="1:30 PM">1:30 PM</option>
+                                                <option value="2:00 PM">2:00 PM</option>
+                                                <option value="2:30 PM">2:30 PM</option>
+                                                <option value="3:00 PM">3:00 PM</option>
+                                                <option value="3:30 PM">3:30 PM</option>
+                                                <option value="4:00 PM">4:00 PM</option>
+                                                <option value="4:30 PM">4:30 PM</option>
+                                                <option value="5:00 PM">5:00 PM</option>
+                                                <option value="5:30 PM">5:30 PM</option>
+                                                <option value="6:00 PM">6:00 PM</option>
+                                                <option value="6:30 PM">6:30 PM</option>
+                                                <option value="7:00 PM">7:00 PM</option>
+                                                <option value="7:30 PM">7:30 PM</option>
+                                                <option value="8:00 PM">8:00 PM</option>
+                                                <option value="8:30 PM">8:30 PM</option>
+                                                <option value="9:00 PM">9:00 PM</option>
                                             </Field>
                                         </div>
                                     </div>
@@ -181,15 +215,15 @@ function Booking() {
                                         </label>
                                         <Field as="select" id="occasion" name="occasion" className='occasion'>
                                             <option value="">🥂 Occasion</option>
-                                            <option value="birthday">🎂 Birthday</option>
-                                            <option value="engagement">💍 Engagement</option>
-                                            <option value="wedding">💒 Wedding</option>
-                                            <option value="anniversary">💝 Anniversary</option>
-                                            <option value="babyShower">🍼 Baby Shower</option>
-                                            <option value="graduation">🎓 Graduation</option>
-                                            <option value="bachelor">🍻 Bachelor</option>
-                                            <option value="bachelorette">🎉 Bachelorette</option>
-                                            <option value="mitzvah">✡️ Mitzvah</option>
+                                            <option value="Birthday">🎂 Birthday</option>
+                                            <option value="Engagement">💍 Engagement</option>
+                                            <option value="Wedding">💒 Wedding</option>
+                                            <option value="Anniversary">💝 Anniversary</option>
+                                            <option value="Baby Shower">🍼 Baby Shower</option>
+                                            <option value="Graduation">🎓 Graduation</option>
+                                            <option value="Bachelor">🍻 Bachelor</option>
+                                            <option value="Bachelorette">🎉 Bachelorette</option>
+                                            <option value="Mitzvah">✡️ Mitzvah</option>
                                         </Field>
                                         <ErrorMessage name="occasion" component="div" className="error-message" />
                                     </div>
@@ -197,7 +231,7 @@ function Booking() {
                                         <div className="field-row">
                                             <img
                                                 src={Children}
-                                                alt="Children"
+                                                alt="Children Icon"
                                                 className="children-icon icon"
                                             />
                                             <label htmlFor="children">
@@ -208,7 +242,7 @@ function Booking() {
                                         <div className="field-row">
                                             <img
                                                 src={Wheelchair}
-                                                alt="Wheelchair"
+                                                alt="Wheelchair Icon"
                                                 className="wheelchair-icon icon"
                                             />
                                             <label htmlFor="wheelchair">
@@ -219,7 +253,7 @@ function Booking() {
                                         <div className="field-row">
                                             <img
                                                 src={Allergies}
-                                                alt="Allergies"
+                                                alt="Allergies Icon"
                                                 className="allergies-icon icon"
                                             />
                                             <label htmlFor="allergies">
@@ -230,8 +264,8 @@ function Booking() {
                                     </div>
                                 </fieldset>
                             </div>
-                            {/* Submit button */}
-                            <div className="centered-link">
+                            {/* Book Buttons */}
+                            <div className="centered-btns">
                                 <button
                                     type="button"
                                     className="clear-btn"
@@ -242,17 +276,54 @@ function Booking() {
                                 <button
                                     type="submit"
                                     className="booking-btn"
-                                    disabled={isSubmitting || Object.keys(errors).length !== 0}
                                     onMouseEnter={() => setContinueImage(ContinueHoverImage)}
                                     onMouseLeave={() => setContinueImage(ContinueImage)}
+                                    disabled={!isValid || isSubmitting || (Object.keys(touched).length === 0 && touched.constructor === Object)}
                                 >
                                     CONTINUE
-                                    <img src={continueImage} alt="continue icon" />
+                                    <img src={continueImage} alt="Continue Icon" />
                                 </button>
                             </div>
                         </Form>
                     )}
-                </Formik>
+                    </Formik>
+                )}
+
+                {/* Step 2: Confirmation */}
+                {step === 2 && (
+                    <div className='confirmation-wrapper'>
+                        <h2 className='confirmation-heading'>Confirm Your Booking Details</h2>
+                        <div className='confirmation-group'>
+                            <div className='confirmation-column'>
+                                <p>Date: {formData.date}</p>
+                                <p>Time: {formData.time}</p>
+                                <p>Guests: {formData.guests}</p>
+                            </div>
+                            <div className='confirmation-column'>
+                                <p>Name: {formData.fullName}</p>
+                                <p>Phone: {formData.phone}</p>
+                                <p>Email: {formData.email}</p>
+                            </div>
+                            <div className='confirmation-column'>
+                                <p>Occasion: {formData.occasion}</p>
+                                <div className='chk-boxes'>
+                                    <p>Children: {formData.children ? 'Yes' : 'No'}</p>
+                                    <p>Wheelchair: {formData.wheelchair ? 'Yes' : 'No'}</p>
+                                    <p>Allergies: {formData.allergies ? 'Yes' : 'No'}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='confirmation-message'>
+                            <p>If this all looks correct click SUBMIT.</p>
+                            <p>If you require any changes to your table reservation click EDIT</p>
+                        </div>
+                        {/* Confirmation Buttons */}
+                        <div className="centered-btns">
+                            <button className='edit-btn' onClick={handleEdit}>EDIT</button>
+                            <button className='submit-btn' onClick={handleConfirm}>SUBMIT</button>
+                        </div>
+                    </div>
+                )}
                 <div className="accent-bar-bottom" />
             </section>
         </>

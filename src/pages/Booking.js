@@ -9,14 +9,12 @@ import Group from '../assets/group.png';
 import ContinueHoverImage from "../assets/continue-hover.png";
 import ContinueImage from "../assets/continue.png";
 import BookingSchema from '../components/schema/BookingSchema';
-import { useNavigate } from 'react-router-dom';
 import '../components/styles/normalize.css';
 import '../components/styles/booking.css';
 
-function Booking() {
+function Booking(props) {
     const [continueImage, setContinueImage] = useState(ContinueImage);
     const [step, setStep] = useState(1);
-    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         date: '',
         time: '',
@@ -57,7 +55,7 @@ function Booking() {
 
     const handleConfirm = () => {
         console.log('Form submitted:', formData);
-        navigate('/thankyou', { state: formData });
+        props.navigate('/thankyou', { state: formData });
     };
 
     const formatPhoneNumber = (value) => {
@@ -119,6 +117,7 @@ function Booking() {
                                                 aria-required="true"
                                                 aria-label="Select Date"
                                                 title="Date"
+                                                data-testid="date-field"
                                             >
                                                 <option value="">Select Date</option>
                                                 {Array.from({ length: 9 }, (_, index) => {
@@ -159,6 +158,7 @@ function Booking() {
                                                 aria-required="true"
                                                 aria-label="Select Time"
                                                 title="Time"
+                                                data-testid="time-field"
                                             >
                                                 <option value="">Select Time</option>
                                                 <option value="6:00 AM">6:00 AM</option>
@@ -221,6 +221,7 @@ function Booking() {
                                                 aria-required="true"
                                                 aria-label="Select Number of Guests"
                                                 title="Guests"
+                                                data-testid="guests-field"
                                             >
                                                 <option value="">Select Guests</option>
                                                 <option value="1">1</option>
@@ -263,6 +264,7 @@ function Booking() {
                                             aria-required="true"
                                             aria-label="Full Name"
                                             title="Full Name"
+                                            data-testid="fullname-field"
                                         />
                                     </div>
                                     <div className={`field-col ${errors.phone && touched.phone ? 'error' : ''}`}>
@@ -288,6 +290,7 @@ function Booking() {
                                             aria-required="true"
                                             aria-label="Phone"
                                             title="Phone"
+                                            data-testid="phone-field"
                                             onChange={(e) => {
                                                 const formattedValue = formatPhoneNumber(e.target.value);
                                                 setFieldValue('phone', formattedValue);
@@ -317,6 +320,7 @@ function Booking() {
                                             required
                                             aria-required="true"
                                             title="Email"
+                                            data-testid="email-field"
                                         />
                                     </div>
                                 </fieldset>

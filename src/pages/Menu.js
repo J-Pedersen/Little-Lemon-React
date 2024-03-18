@@ -78,7 +78,7 @@ function Menu() {
                 {/* Breakfast */}
                 <section className={`section section-gap ${isOpenBreakfast ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('breakfast')} >
-                        <div className= "title">
+                        <div className= "menu-content-title">
                             <h2>BREAKFAST</h2>
                         </div>
                     </div>
@@ -240,7 +240,7 @@ function Menu() {
                 {/* Appetizers */}
                 <section className={`section section-gap ${isOpenAppetizers ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('appetizers')} >
-                        <div className= "title">
+                        <div className= "menu-content-title">
                             <h2>APPETIZERS</h2>
                         </div>
                     </div>
@@ -398,7 +398,7 @@ function Menu() {
                 {/* Entrees */}
                 <section className={`section section-gap ${isOpenEntrees ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('entrees')} >
-                        <div className= "title">
+                        <div className= "menu-content-title">
                             <h2>ENTREES</h2>
                         </div>
                     </div>
@@ -561,7 +561,7 @@ function Menu() {
                 {/* Desserts */}
                 <section className={`section section-gap ${isOpenDesserts ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('desserts')} >
-                        <div className= "title">
+                        <div className= "menu-content-title">
                             <h2>DESSERTS</h2>
                         </div>
                     </div>
@@ -730,7 +730,7 @@ function Menu() {
                 {/* Beverages */}
                 <section className={`section section-gap ${isOpenBeverages ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('beverages')} >
-                        <div className= "title">
+                        <div className= "menu-content-title">
                             <h2>BEVERAGES</h2>
                         </div>
                     </div>

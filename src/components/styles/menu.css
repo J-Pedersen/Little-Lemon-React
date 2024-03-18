@@ -81,7 +81,7 @@
     text-align: center;
 }
 
-.title h2:hover {
+.menu-content-title h2:hover {
     background-color: #46664b;
     color: #F4CE14;
     border-top: 2px solid #F4CE14;
@@ -89,7 +89,7 @@
     -webkit-text-stroke: .75px #000;
 }
 
-.title {
+.menu-content-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -98,7 +98,7 @@
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
-.title h2 {
+.menu-content-title h2 {
     display: flex;
     border-top: 2px solid #000;
     border-bottom: 2px solid #000;

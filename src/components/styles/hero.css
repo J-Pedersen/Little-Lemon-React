@@ -41,7 +41,7 @@
     flex-wrap: wrap;
 }
 
-.title {
+.hero-title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,7 +50,7 @@
     justify-content: center;
 }
 
-.title h1 {
+.hero-title h1 {
     color: #F4CE14;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     font-family: Markazi Text;
@@ -62,7 +62,7 @@
     margin-left: 100px;
 }
 
-.title h2 {
+.hero-title h2 {
     color: #EDEFEE;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     font-family: Markazi Text;
@@ -74,7 +74,7 @@
     margin-left: 100px;
 }
 
-.title p {
+.hero-title p {
     width: 400px;
     margin-left: 50px;
     margin-top: 30px;

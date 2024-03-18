@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import dishIcon from "../assets/dish-icon.png"
+import dishIcon from "../assets/dish-icon-specials.png"
 import greekSalad from "../assets/dishes/greek-salad.png"
 import dolmades from "../assets/dishes/dolmades.png"
 import pizza from "../assets/dishes/pizza.png"

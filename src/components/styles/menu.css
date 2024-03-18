@@ -1,14 +1,231 @@
 .menu-section {
-    background-color: #495E57;
-    height: 430px;
+    min-height: 700px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    background-color: #495E57;
     text-align: center;
     align-content: center;
     position: relative;
     margin-top: 122px;
+    padding-bottom: 50px;
 }
 
-.menu-section h1{
+.menu-header {
+    display: flex;
+    justify-content: left;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 30px;
+    margin-top: 60px;
+}
+
+.menu-title img {
+    height: 70px;
+    width: 80px;
+    margin-top: 2px;
+}
+
+.menu-title {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    gap: 10px;
+    height: 100px;
+    width: 400px;
+    background-color: #46664b;
+    border-top-right-radius: 16px;
+    border-bottom-right-radius: 16px;
+    border-top: 2px solid #F4CE14;
+    border-bottom: 2px solid #F4CE14;
+    border-right: 2px solid #F4CE14;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-title-content {
+    display: flex;
+    gap: 30px;
+    width: 300px;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.menu-title h1 {
     color: #F4CE14;
-    padding-top: 160px;
+    text-align: center;
+    -webkit-text-stroke: .75px #000;
+}
+
+.section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    text-align: center;
+    justify-items: center;
+}
+
+.section-gap {
+    margin-bottom: 20px;
+}
+
+.header {
+    display: flex;
+    justify-items: center;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+}
+
+.title h2:hover {
+    background-color: #46664b;
+    color: #F4CE14;
+    border-top: 2px solid #F4CE14;
+    border-bottom: 2px solid #F4CE14;
+    -webkit-text-stroke: .75px #000;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 100%;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.title h2 {
+    display: flex;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+    color: #000000;
+    background-color: #F4CE14;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 60px;
+    margin: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.menu-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    min-height: 450px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.menu-card {
+    height: 450px;
+    width: 275px;
+    background-color: #46664b;
+    border-radius: 16px;
+    border: 2px solid #F4CE14;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-card img {
+    height: 195px;
+    width: 275px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.menu-card-header {
+    display: flex;
+    color: #F4CE14;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    font-family: Karla;
+    font-size: 20px;
+    font-weight: 950;
+    width: 100%;
+}
+
+.menu-card-header h3 {
+    margin-left: 20px;
+    font-family: Karla;
+    font-size: 18px;
+    font-weight: 950;
+    width: 100%;
+    align-self: center;
+    text-align: left;
+    flex: 2;
+}
+
+.price {
+    padding-top: 4px;
+    margin-right: 20px;
+    width: 100%;
+    text-align: right;
+    flex: 1;
+}
+
+.menu-description {
+    color: #EDEFEE;
+    width: 235px;
+    height: 100px;
+    margin-top: 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.add-to-cart-btn {
+    width: 200px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Karla;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #F4CE14;
+    border-radius: 16px;
+    border: 2px solid #000;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.add-to-cart-btn:hover {
+    background-color: #33333382;
+    border: 2px solid #000;
+    color: #F4CE14;
+    cursor: pointer;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.add-to-cart-btn img {
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.card-accent-bar {
+    height: 6px;
+    width: 274px;
+    background-color: #F4CE14;
+    margin: 0;
+    margin-top: -3.5px;
+    margin-left: -.25px;
+}
+
+.menu-wrapper {
+    display: none;
+}
+
+.menu-wrapper.show {
+    display: inline-block;
+}
+
+.spacer {
+    margin-bottom: 50px;
 }

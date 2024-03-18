@@ -22,7 +22,7 @@ function MobileNavigation() {
                 <li role="menuitem">
                     <NavLink
                         to="/"
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="HOME"
                         title="HOME"
                         onClick={toggleMenu}
@@ -36,7 +36,7 @@ function MobileNavigation() {
                         smooth={true}
                         duration={500}
                         offset={-50}
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="ABOUT"
                         title="ABOUT"
                         onClick={toggleMenu}
@@ -47,7 +47,7 @@ function MobileNavigation() {
                 <li role="menuitem">
                     <NavLink
                         to="/menu"
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="MENU"
                         title="MENU"
                         onClick={toggleMenu}
@@ -58,7 +58,7 @@ function MobileNavigation() {
                 <li role="menuitem">
                     <NavLink
                         to="/booking"
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="RESERVATIONS"
                         title="RESERVATIONS"
                         onClick={toggleMenu}
@@ -69,7 +69,7 @@ function MobileNavigation() {
                 <li role="menuitem">
                     <NavLink
                         to="/cart"
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="ORDER ONLINE"
                         title="ORDER ONLINE"
                         onClick={toggleMenu}
@@ -80,7 +80,7 @@ function MobileNavigation() {
                 <li role="menuitem">
                     <NavLink
                         to="/login"
-                        className='nav-link'
+                        className={`nav-link ${isOpen ? 'open-link' : ''}`}
                         alt="LOGIN"
                         title="LOGIN"
                         onClick={toggleMenu}

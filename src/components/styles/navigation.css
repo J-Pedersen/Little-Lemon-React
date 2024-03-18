@@ -34,9 +34,9 @@ menu {
     .mobile-navigation {
         position: fixed;
         top: 122px;
-        right: -300px;
-        width: 300px;
-        height: 400px;
+        right: -280px;
+        width: 280px;
+        height: 500px;
         background-color: #edefeedb;
         transition: right 0.3s ease;
         z-index: 9998;
@@ -60,8 +60,10 @@ menu {
         display: flex;
         flex-direction: column;
         text-align: center;
-        font-size: 26px;
-        gap: 30px;
+        font-size: 28px;
+        width: 280px;
+        padding-left: 0%;
+        margin-left: 0%;
     }
 
     .line {
@@ -83,5 +85,23 @@ menu {
 
     .open .line:nth-child(3) {
         transform: rotate(45deg) translate(-10px, -11px);
+    }
+
+    .nav-link {
+        display: block;
+        text-align: center;
+        width: 280px;
+        padding: 15px;
+        border-top: 2px solid transparent;
+        border-bottom: 2px solid transparent;
+    }
+
+    .nav-link:active,
+    .nav-link:hover,
+    .nav-link:focus  {
+        background-color: #46664b;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+        border-top: 2px solid #F4CE14;
+        border-bottom: 2px solid #F4CE14;
     }
 }

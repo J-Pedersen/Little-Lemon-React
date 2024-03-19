@@ -33,6 +33,23 @@ function Menu() {
             return;
         }
 
+        if (section === 'breakfast') {
+            setIsOpenBreakfast(!isOpenBreakfast);
+        }
+
+        if (section === 'appetizers') {
+            setIsOpenAppetizers(!isOpenAppetizers);
+        }
+        if (section === 'entrees') {
+            setIsOpenEntrees(!isOpenEntrees);
+        }
+        if (section === 'desserts') {
+            setIsOpenDesserts(!isOpenDesserts);
+        }
+        if (section === 'beverages') {
+            setIsOpenBeverages(!isOpenBeverages);
+        }
+
         setIsOpenBreakfast(section === 'breakfast' && newSectionState);
         setIsOpenAppetizers(section === 'appetizers' && newSectionState);
         setIsOpenEntrees(section === 'entrees' && newSectionState);
@@ -40,13 +57,19 @@ function Menu() {
         setIsOpenBeverages(section === 'beverages' && newSectionState);
     };
 
+    const [isHoveredBreakfast, setIsHoveredBreakfast] = useState(false);
+    const [isHoveredAppetizers, setIsHoveredAppetizers] = useState(false);
+    const [isHoveredEntrees, setIsHoveredEntrees] = useState(false);
+    const [isHoveredDesserts, setIsHoveredDesserts] = useState(false);
+    const [isHoveredBeverages, setIsHoveredBeverages] = useState(false);
+
     function DeliveryButton() {
         const [isHovered, setIsHovered] = useState(false);
         return (
             <button
                 className='add-to-cart-btn'
                 title="Order A Delivery"
-                aria-label="Order Loukoumades Delivery"
+                aria-label="Order A Delivery"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
             >
@@ -77,9 +100,27 @@ function Menu() {
                 {/* Content */}
                 {/* Breakfast */}
                 <section className={`section section-gap ${isOpenBreakfast ? 'open' : ''}`}>
-                    <div className= "header" onClick={() => toggleSection('breakfast')} >
-                        <div className= "menu-content-title">
-                            <h2>BREAKFAST</h2>
+                    <div className="header" onClick={() => toggleSection('breakfast')}>
+                        <div className="menu-content-title">
+                            <h2
+                                onMouseEnter={() => setIsHoveredBreakfast(true)}
+                                onMouseLeave={() => setIsHoveredBreakfast(false)}
+                            >
+                                &nbsp;&nbsp;&nbsp;&nbsp;BREAKFAST&nbsp;&nbsp;&nbsp;&nbsp;
+                                {isOpenBreakfast ? (
+                                    <img
+                                        src={require(isHoveredBreakfast ? "../assets/chevron-up-hover.png" : "../assets/chevron-up.png")}
+                                        alt="Up Chevron"
+                                        className="chevron-icon"
+                                    />
+                                ) : (
+                                    <img
+                                        src={require(isHoveredBreakfast ? "../assets/chevron-down-hover.png" : "../assets/chevron-down.png")}
+                                        alt="Down Chevron"
+                                        className="chevron-icon"
+                                    />
+                                )}
+                            </h2>
                         </div>
                     </div>
                     <div className={`menu-wrapper ${isOpenBreakfast ? 'show' : ''}`}>
@@ -241,7 +282,25 @@ function Menu() {
                 <section className={`section section-gap ${isOpenAppetizers ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('appetizers')} >
                         <div className= "menu-content-title">
-                            <h2>APPETIZERS</h2>
+                            <h2
+                                onMouseEnter={() => setIsHoveredAppetizers(true)}
+                                onMouseLeave={() => setIsHoveredAppetizers(false)}
+                            >
+                                &nbsp;&nbsp;&nbsp;&nbsp;APPETIZERS&nbsp;&nbsp;&nbsp;
+                                {isOpenAppetizers ? (
+                                    <img
+                                        src={require(isHoveredAppetizers ? "../assets/chevron-up-hover.png" : "../assets/chevron-up.png")}
+                                        alt="Up Chevron"
+                                        className="chevron-icon"
+                                    />
+                                ) : (
+                                    <img
+                                        src={require(isHoveredAppetizers ? "../assets/chevron-down-hover.png" : "../assets/chevron-down.png")}
+                                        alt="Down Chevron"
+                                        className="chevron-icon"
+                                    />
+                                )}
+                            </h2>
                         </div>
                     </div>
                     <div className={`menu-wrapper ${isOpenAppetizers ? 'show' : ''}`}>
@@ -399,7 +458,25 @@ function Menu() {
                 <section className={`section section-gap ${isOpenEntrees ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('entrees')} >
                         <div className= "menu-content-title">
-                            <h2>ENTREES</h2>
+                            <h2
+                                onMouseEnter={() => setIsHoveredEntrees(true)}
+                                onMouseLeave={() => setIsHoveredEntrees(false)}
+                            >
+                                &nbsp;&nbsp;&nbsp;&nbsp;ENTREES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                {isOpenEntrees ? (
+                                    <img
+                                        src={require(isHoveredEntrees ? "../assets/chevron-up-hover.png" : "../assets/chevron-up.png")}
+                                        alt="Up Chevron"
+                                        className="chevron-icon"
+                                    />
+                                ) : (
+                                    <img
+                                        src={require(isHoveredEntrees ? "../assets/chevron-down-hover.png" : "../assets/chevron-down.png")}
+                                        alt="Down Chevron"
+                                        className="chevron-icon"
+                                    />
+                                )}
+                            </h2>
                         </div>
                     </div>
                     <div className={`menu-wrapper ${isOpenEntrees ? 'show' : ''}`}>
@@ -562,7 +639,25 @@ function Menu() {
                 <section className={`section section-gap ${isOpenDesserts ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('desserts')} >
                         <div className= "menu-content-title">
-                            <h2>DESSERTS</h2>
+                            <h2
+                                onMouseEnter={() => setIsHoveredDesserts(true)}
+                                onMouseLeave={() => setIsHoveredDesserts(false)}
+                            >
+                                &nbsp;&nbsp;&nbsp;&nbsp;DESSERTS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                {isOpenDesserts ? (
+                                    <img
+                                        src={require(isHoveredDesserts ? "../assets/chevron-up-hover.png" : "../assets/chevron-up.png")}
+                                        alt="Up Chevron"
+                                        className="chevron-icon"
+                                    />
+                                ) : (
+                                    <img
+                                        src={require(isHoveredDesserts ? "../assets/chevron-down-hover.png" : "../assets/chevron-down.png")}
+                                        alt="Down Chevron"
+                                        className="chevron-icon"
+                                    />
+                                )}
+                            </h2>
                         </div>
                     </div>
                     <div className={`menu-wrapper ${isOpenDesserts ? 'show' : ''}`}>
@@ -731,7 +826,25 @@ function Menu() {
                 <section className={`section section-gap ${isOpenBeverages ? 'open' : ''}`}>
                     <div className= "header" onClick={() => toggleSection('beverages')} >
                         <div className= "menu-content-title">
-                            <h2>BEVERAGES</h2>
+                            <h2
+                                onMouseEnter={() => setIsHoveredBeverages(true)}
+                                onMouseLeave={() => setIsHoveredBeverages(false)}
+                            >
+                                &nbsp;&nbsp;&nbsp;&nbsp;BEVERAGES&nbsp;&nbsp;&nbsp;&nbsp;
+                                {isOpenBeverages ? (
+                                    <img
+                                        src={require(isHoveredBeverages ? "../assets/chevron-up-hover.png" : "../assets/chevron-up.png")}
+                                        alt="Up Chevron"
+                                        className="chevron-icon"
+                                    />
+                                ) : (
+                                    <img
+                                        src={require(isHoveredBeverages ? "../assets/chevron-down-hover.png" : "../assets/chevron-down.png")}
+                                        alt="Down Chevron"
+                                        className="chevron-icon"
+                                    />
+                                )}
+                            </h2>
                         </div>
                     </div>
                     <div className={`menu-wrapper ${isOpenBeverages ? 'show' : ''}`}>

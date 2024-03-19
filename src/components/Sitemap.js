@@ -19,7 +19,7 @@ function Sitemap() {
                         <li>
                             <Link
                                 to="/"
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="HOME"
                                 title="HOME"
                                 onClick={scrollToTop}
@@ -33,7 +33,7 @@ function Sitemap() {
                                 smooth={true}
                                 duration={500}
                                 offset={-50}
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="ABOUT"
                                 title="ABOUT"
                             >
@@ -43,7 +43,7 @@ function Sitemap() {
                         <li>
                             <Link
                                 to="/menu"
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="MENU"
                                 title="MENU"
                                 onClick={scrollToTop}
@@ -54,7 +54,7 @@ function Sitemap() {
                         <li>
                             <Link
                                 to="/booking"
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="RESERVATIONS"
                                 title="RESERVATIONS"
                                 onClick={scrollToTop}
@@ -65,7 +65,7 @@ function Sitemap() {
                         <li>
                             <Link
                                 to="/cart"
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="ORDER ONLINE"
                                 title="ORDER ONLINE"
                                 onClick={scrollToTop}
@@ -76,7 +76,7 @@ function Sitemap() {
                         <li>
                             <Link
                                 to="/login"
-                                className='nav-link'
+                                className='sitemap-nav-link'
                                 alt="LOGIN"
                                 title="LOGIN"
                                 onClick={scrollToTop}

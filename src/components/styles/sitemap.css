@@ -1,7 +1,7 @@
 .sitemap-section {
     display: flex;
     flex-direction: column;
-    flex: 1;
+
     align-items: center;
     min-width: 240px;
     width: 240px;
@@ -15,13 +15,18 @@
     font-family: 'Karla';
     font-size: 24px;
     font-weight: 950;
+    width: 100%;
     text-align: center;
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     text-decoration: underline;
 }
 
 .sitemap-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     margin: 0 auto;
     width: 80%;
@@ -33,25 +38,29 @@
     list-style: none;
     text-decoration: 'none';
     text-align: center;
+    align-content: center;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: center;
     font-family: 'Karla';
     font-size: 18px;
     font-weight: 600;
     width: 80%;
 }
 
-.nav-link {
+.sitemap-nav-link {
+    display: flex;
     color: #000;
+    text-align: center;
     margin-bottom: 10px;
     align-self: center;
     text-decoration: none;
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+    width: 100%;
 }
 
-.nav-link:active,
-.nav-link:hover,
-.nav-link:focus  {
+.sitemap-nav-link:active,
+.sitemap-nav-link:hover,
+.sitemap-nav-link:focus  {
     color: #F4CE14;
     -webkit-text-stroke: .5px #000;
 }

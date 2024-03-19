@@ -229,3 +229,8 @@
 .spacer {
     margin-bottom: 50px;
 }
+
+.chevron-icon {
+    height: 40px;
+    width: 70px;
+}

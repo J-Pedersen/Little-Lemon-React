@@ -18,7 +18,7 @@ function MobileNavigation() {
                 <div className="line"></div>
                 <div className="line"></div>
             </div>
-            <menu role="menubar">
+            <menu role="menubar" className='main-nav-menu'>
                 <li role="menuitem">
                     <NavLink
                         to="/"

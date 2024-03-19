@@ -63,19 +63,51 @@ function Menu() {
     const [isHoveredDesserts, setIsHoveredDesserts] = useState(false);
     const [isHoveredBeverages, setIsHoveredBeverages] = useState(false);
 
-    function DeliveryButton() {
+    const [cartItems, setCartItems] = useState([]);
+    const [quantities, setQuantities] = useState({}); // State to track quantities
+
+    const addToCart = (dishName, price) => {
+        const quantity = quantities[dishName] || 1; // Get quantity for the dish
+        const parsedPrice = parseFloat(price.replace('$', '')); // Parse price to float
+        const newCartItem = { dishName, price: parsedPrice, quantity };
+        setCartItems([...cartItems, newCartItem]);
+        console.log(`Added ${quantity} ${dishName} to cart. Price: ${parsedPrice * quantity}`);
+    };
+
+    const handleQuantityChange = (event, dishName) => {
+        const newQuantities = { ...quantities };
+        newQuantities[dishName] = parseInt(event.target.value);
+        setQuantities(newQuantities);
+    };
+
+    function DeliveryButton({ dishName, price }) {
         const [isHovered, setIsHovered] = useState(false);
+
+        const handleClick = () => {
+            addToCart(dishName, price);
+        };
+
         return (
-            <button
-                className='add-to-cart-btn'
-                title="Order A Delivery"
-                aria-label="Order A Delivery"
+            <div className='order-btn-wrapper'>
+                <input
+                    type="number"
+                    value={quantities[dishName] || 1}
+                    min={1}
+                    max={9}
+                    onChange={(e) => handleQuantityChange(e, dishName)}
+                />
+                <button
+                    className='add-to-cart-btn'
+                    title="Order A Delivery"
+                    aria-label="Order A Delivery"
+                    onClick={handleClick}
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-            >
-                Order A Delivery
-                <img src={isHovered ? deliveryHover : delivery} alt="Delivery" />
-            </button>
+                >
+                    Order A Delivery
+                    <img src={isHovered ? deliveryHover : delivery} alt="Delivery" />
+                </button>
+            </div>
         );
     }
 
@@ -142,7 +174,7 @@ function Menu() {
                                 anise, or almonds well as several more modern flavors such as
                                 chocolate, cherry, or lemon.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Biscotti" price="$5.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -161,7 +193,7 @@ function Menu() {
                                     Sprinkled with powdered sugar
                                     and crushed pistachios.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Loukoumades" price="$5.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -180,7 +212,7 @@ function Menu() {
                                     of blueberry, rasberry, strawberry, Orange, or lemon jam,
                                     or semi-sweet almond paste.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Brioche" price="$6.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -191,14 +223,14 @@ function Menu() {
                                 />
                                 <hr className='card-accent-bar'></hr>
                                 <div className='menu-card-header'>
-                                    <h3>Greek Yogurt and Honey</h3>
+                                    <h3>Yogurt and Honey</h3>
                                     <p className='price'>$7.99</p>
                                 </div>
                                 <p className='menu-description'>
                                     Tangy greek yogurt drizzled with an ample ammount of
                                     honey and paired with seasonal fruits.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Greek Yogurt and Honey" price="$7.99" />
                             </article>
                         </div>
                         <div className='menu-content' role="list">
@@ -218,7 +250,7 @@ function Menu() {
                                     Eggs, your choice of meat, and or vegetables
                                     whipped and fried to perfection.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Breakfast Frittata" price="$9.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -236,7 +268,7 @@ function Menu() {
                                     Scrambled eggs combined with a thick tomato sauce
                                     served with bioche and feta.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Kagianas" price="$10.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -254,7 +286,7 @@ function Menu() {
                                     Soft boiled eggs sliced in half and fried in butter with thyme,
                                     and red peppers. Served with a side of bread and fresh tomato slices.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Turkish Fried Eggs" price="$10.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -272,7 +304,7 @@ function Menu() {
                                     Roasted spinach and onion with a low baked egg in the
                                     center to give it that gooey egg yolk goodness.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Ispanakli Yumurta" price="$5.99" />
                             </article>
                         </div>
                     </div>
@@ -320,7 +352,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     A mix of seasonal fruits.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Fruit Salad" price="$5.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -337,7 +369,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     A traditional greek soup made with chicken, rice, lemon, and egg.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Avgolemono" price="$6.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -373,7 +405,7 @@ function Menu() {
                                     A savory greek pie made with filo dough and filled
                                     with spinach, scallions, and feta cheese.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Spanakopita" price="$8.99" />
                             </article>
                         </div>
                         <div className='menu-content' role="list">
@@ -394,7 +426,7 @@ function Menu() {
                                     onion, feta cheese, and olives and dressed
                                     with salt, greek oregano, capers, and olive oil.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Greek Salad" price="$9.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -411,7 +443,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     Grape leaves stuffed with rice, lemon, and fresh herbs.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Dolmades" price="$10.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -430,7 +462,7 @@ function Menu() {
                                 and italian herbs, battered dipped and
                                 fried to a crispy golden brown.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Squash Blossoms" price="$11.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -448,7 +480,7 @@ function Menu() {
                                     Creamy risotto available in mushroom,
                                     asparagus, or italian herb and butter.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Risotto" price="$12.99" />
                             </article>
                         </div>
                     </div>
@@ -497,7 +529,7 @@ function Menu() {
                                     Fresh fettucine pasta served with alfredo sauce
                                     and your choice of grilled shrimp, chicken, or mushroom.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Fettuccine Alfredo" price="$11.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -515,7 +547,7 @@ function Menu() {
                                     Fresh spaghetti with eggs, romano cheese,
                                     pork, garlic, and black pepper.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Pasta Carbonara" price="$11.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -534,7 +566,7 @@ function Menu() {
                                     cheese, and marinara sauce.
                                     Topped with a blend of mozzerella, parmesan, and romano.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Lasagne" price="$12.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -553,7 +585,7 @@ function Menu() {
                                     Additional toppings available for additional charge.
                                     Serves Two.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Pizza" price="$12.99" />
                             </article>
                         </div>
                         <div className='menu-content' role="list">
@@ -574,7 +606,7 @@ function Menu() {
                                     chopped onions, garlic, black pepper, tomatoes,
                                     green pepper, parsley, and ground meat.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Karniyarik" price="$13.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -593,7 +625,7 @@ function Menu() {
                                     with traditional italian spagetti sauce and
                                     topped with parmesan and mozzerella cheese.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Eggplant Parmesan" price="$14.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -612,7 +644,7 @@ function Menu() {
                                     Served with steamed clams, a red
                                     or white wine sauce, and lemon.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Linguine and Clams" price="$15.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -629,7 +661,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     Slow roasted lamb over a bed of seasoned rice.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Lamb Tandoori" price="$16.99" />
                             </article>
                         </div>
                     </div>
@@ -681,7 +713,7 @@ function Menu() {
                                     All are made by our talented chefs in our
                                     very own kitchen.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Gelato" price="$6.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -699,7 +731,7 @@ function Menu() {
                                     A layered pastry dessert made of filo pastry sheets,
                                     filled with chopped nuts, and honey.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Baklava" price="$7.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -717,7 +749,7 @@ function Menu() {
                                     Made from dates, ghee, tahini, almonds,
                                     pistachios and cashews.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Halva" price="$7.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -735,7 +767,7 @@ function Menu() {
                                     Made from anthotyros cheese, honey, egg,
                                     cornflour, and lemon zest.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Greek Honey Cake" price="$7.99" />
                             </article>
                         </div>
                         <div className='menu-content' role="list">
@@ -756,7 +788,7 @@ function Menu() {
                                     with custard and whipped cream.
                                     Topped with crushed pistachios and cinnamon.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Ekmek Kataifi" price="$8.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -775,7 +807,7 @@ function Menu() {
                                     Topped with a yogurt frosting and lightly
                                     dusted with nutmeg.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Lemon Cake" price="$8.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -795,7 +827,7 @@ function Menu() {
                                         Classic vanilla or espresso.
                                         Topped with either berries, chocolate or caramel.
                                     </p>
-                                    <DeliveryButton />
+                                    <DeliveryButton dishName="Panna Cotta" price="$8.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -816,7 +848,7 @@ function Menu() {
                                     sugar and mascarpone.
                                     Dusted with cocoa.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Tiramisu" price="$8.99" />
                             </article>
                         </div>
                     </div>
@@ -864,7 +896,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     Apple, grape, cranberry juices.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Juice" price="$3.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -881,7 +913,7 @@ function Menu() {
                                 <p className='menu-description'>
                                     Whole, oat, chocolate milk.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Milk" price="$3.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -899,7 +931,7 @@ function Menu() {
                                     Pepsi, diet pepsi, mt. dew, root beer,
                                     sprite, or orange soft drinks.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Soft Drink" price="$3.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -917,7 +949,7 @@ function Menu() {
                                     A mix of muddled berries or citrus fruits
                                     and sparkling ice water.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Refresher" price="$4.99" />
                             </article>
                         </div>
                         <div className='menu-content' role="list">
@@ -938,7 +970,7 @@ function Menu() {
                                     cappuccino, americano or turkish blends.
                                     Grounded and brewed fresh.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Coffee" price="$5.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -956,7 +988,7 @@ function Menu() {
                                     We have many teas to choose from and
                                     all are fresh brewed.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Tea" price="$5.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -976,7 +1008,7 @@ function Menu() {
                                     Price per glass will vary base on
                                     which type and vintage you order.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Wine" price="$10.99" />
                             </article>
                             <article className='menu-card'>
                                 <img
@@ -995,7 +1027,7 @@ function Menu() {
                                     Our skilled mixologists are able to make
                                     just about any mixed drink you may desire.
                                 </p>
-                                <DeliveryButton />
+                                <DeliveryButton dishName="Cocktail" price="$12.99" />
                             </article>
                         </div>
                     </div>

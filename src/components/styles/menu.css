@@ -234,3 +234,22 @@
     height: 40px;
     width: 70px;
 }
+
+.order-btn-wrapper {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.order-btn-wrapper input {
+    border-radius: 12px;
+    width: 40px;
+}
+
+.order-btn-wrapper input[type="number"] {
+    text-align: center;
+    margin-right: 10px;
+    color: #F4CE14;
+    background-color: #33333382;
+    border: 2px solid #F4CE14;
+}

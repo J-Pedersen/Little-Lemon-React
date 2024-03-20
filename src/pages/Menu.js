@@ -64,11 +64,11 @@ function Menu() {
     const [isHoveredBeverages, setIsHoveredBeverages] = useState(false);
 
     const [cartItems, setCartItems] = useState([]);
-    const [quantities, setQuantities] = useState({}); // State to track quantities
+    const [quantities, setQuantities] = useState({});
 
     const addToCart = (dishName, price) => {
-        const quantity = quantities[dishName] || 1; // Get quantity for the dish
-        const parsedPrice = parseFloat(price.replace('$', '')); // Parse price to float
+        const quantity = quantities[dishName] || 1;
+        const parsedPrice = parseFloat(price.replace('$', ''));
         const newCartItem = { dishName, price: parsedPrice, quantity };
         setCartItems([...cartItems, newCartItem]);
         console.log(`Added ${quantity} ${dishName} to cart. Price: ${parsedPrice * quantity}`);

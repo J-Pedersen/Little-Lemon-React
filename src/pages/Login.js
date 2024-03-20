@@ -54,7 +54,7 @@ function Login() {
                     </div>
                 </div>
                 <div className="register-link">
-                    Don't have an account? <Link className="register-new" to="/register">Create One Here</Link>
+                    Don't have an account? <Link className="register-new" to="/register">Create an Account</Link>
                 </div>
                 <div className="accent-bar-bottom" />
             </section>

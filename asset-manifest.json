@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/little-lemon-react/static/css/main.e28e5010.css",
-    "main.js": "/little-lemon-react/static/js/main.5fca0cc3.js",
+    "main.js": "/little-lemon-react/static/js/main.f5de10bd.js",
     "static/js/453.46943c7c.chunk.js": "/little-lemon-react/static/js/453.46943c7c.chunk.js",
     "static/media/Chris.png": "/little-lemon-react/static/media/Chris.11f95d70b111e58e9e23.png",
     "static/media/Jane.png": "/little-lemon-react/static/media/Jane.415cc0d7c3c90e39b4b6.png",
@@ -55,11 +55,11 @@
     "static/media/logoVerticalWhite.png": "/little-lemon-react/static/media/logoVerticalWhite.81459e48722eb4deacb5.png",
     "index.html": "/little-lemon-react/index.html",
     "main.e28e5010.css.map": "/little-lemon-react/static/css/main.e28e5010.css.map",
-    "main.5fca0cc3.js.map": "/little-lemon-react/static/js/main.5fca0cc3.js.map",
+    "main.f5de10bd.js.map": "/little-lemon-react/static/js/main.f5de10bd.js.map",
     "453.46943c7c.chunk.js.map": "/little-lemon-react/static/js/453.46943c7c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e28e5010.css",
-    "static/js/main.5fca0cc3.js"
+    "static/js/main.f5de10bd.js"
   ]
 }
